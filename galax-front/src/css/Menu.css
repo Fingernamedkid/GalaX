@@ -1,0 +1,50 @@
+.list{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 20px;
+    /* margin-top: 70px; */
+    max-width: 1200px;
+    margin: 0 auto; /* Pour centrer le contenu horizontalement */
+    
+    
+    
+
+}
+
+
+
+.menu{
+    background-color: rgb(34, 5, 49);
+    padding: 20px;
+    box-shadow: 10px 10px 10px 10px rgba(160, 6, 216, 0.2);
+}
+
+.logout, .search{
+    padding: 10px;
+    float: right;
+    margin-right: 10px;
+    color: aliceblue;
+    background-color: black;
+    border-radius: 10px;
+    
+}
+
+#link{
+    color: white;
+}
+
+
+#link:hover {
+    color: rgb(239, 127, 146);
+}
+
+.search:hover{
+    color: aqua;
+}
+
+.logout:hover{
+    color: aqua;
+}
+
+
