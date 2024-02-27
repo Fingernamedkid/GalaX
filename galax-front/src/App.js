@@ -8,9 +8,11 @@ function App() {
         <Routes>
           <Route path="/Pages/" element={<Home />} />
           <Route path="/item/:itemId" element={<Item />} />
+          
         </Routes>
       </Router>
     </div>
+    //fdsafdasfs
   );
 }
 
