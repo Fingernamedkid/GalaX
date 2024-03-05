@@ -1,0 +1,41 @@
+*{
+
+    margin: 0px;
+
+}
+
+
+header{
+    background-color: rgb(26, 1, 23);
+    height: 100px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.navHome li{
+    float: right;
+    margin: 30px;
+}
+
+a{ text-decoration: none;}
+
+
+.welcome{
+    margin-top: 400px;
+    text-align: center;
+}
+
+
+footer{
+
+    background-color: black;
+    position: fixed;
+
+    height: 100px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+}
