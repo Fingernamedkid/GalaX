@@ -1,5 +1,6 @@
 import React from "react";
 import "./OpenHome.css";
+import Footer from "../components/Footer";
 function OpenHome() {
     return(
         <div>
@@ -20,9 +21,7 @@ function OpenHome() {
             </div>
 
                 <footer>
-                    <i className="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-facebook"></i>
-                    <h1>Copyright</h1>
+                    <Footer />
                 </footer>
 
             </div>

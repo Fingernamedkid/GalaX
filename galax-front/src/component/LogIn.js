@@ -30,12 +30,9 @@ function LogIn() {
                         </div>
                 </form>
 
-                    <footer>
-                        <div className="social">  <i className="fa-brands fa-instagram"></i>
-                            <i className="fa-brands fa-facebook"></i> </div>
-
-                        <h2>Copyright</h2>
-                    </footer>
+                <footer>
+                    <Footer />
+                </footer>
 
 
         </div>
