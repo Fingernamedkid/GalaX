@@ -16,18 +16,16 @@ function SignIn() {
     })
     const handleChange=(e) =>{
         const value = e.target.value;
-        setUsers({...Users,[e.target.name]: value})
+        setUsers({...users,[e.target.name]: value})
 
 
     }
 
-    //const navigate= useNavigation();
     const submitNewClient = (e) => {
         e.preventDefault();
         axios.post("http://localhost:5050/createU", users)
             .then((res ) => {
                 console.log("Client Ajouté");
-             //   navigate("/sign")
             }).catch((error) => {
             console.log(error);
         })
