@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ListController({startIndex, setStartIndex}){
+export default function ListController({startIndex, setStartIndex , movies}){
     const scrollLeft = () => {
         setStartIndex(prevIndex => Math.max(prevIndex - 5, 0));
     };

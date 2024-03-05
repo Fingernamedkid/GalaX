@@ -1,5 +1,5 @@
 import React from "react";
-import Cards from './Cards.js';
+import Cards from './Card.js';
 
 export default function List({movies, startIndex}) {
     return (
