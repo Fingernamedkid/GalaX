@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import List from '../components/List.js';
+import List from '../List';
 
 export default function Result(){
     const  query  = "dune"

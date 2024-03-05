@@ -8,6 +8,15 @@ import Footer from "./components/Footer";
 import FAQ from "./components/pages/FAQ";
 import Home from "./components/pages/Home";
 import SideMenu from "./components/SideMenu";
+import Item from "./components/pages/Item";
+//********************** */
+import OpenHome from "./component/OpenHome";
+import NotFound from "./component/NotFound";
+import CreateUsers from "./component/CreateUsers";
+import UpdateUsers from "./component/UpdateUsers";
+import Users from "./component/Users";
+import SignIn from "./component/SignIn";
+import LogIn from "./component/LogIn";
 
 function App() {
   return (
@@ -18,10 +27,18 @@ function App() {
         <Route path="/series" element={<Series />}></Route>
         <Route path="/user" element={<User />}></Route>
         <Route path="/faq" element={<FAQ />}></Route>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/home" element={<Home />}></Route>
         <Route path="/film/:id" element={<Item />}></Route>
-
         <Route path="/side" element={<SideMenu />}></Route>
+        <Route path="*" element={<SideMenu />}></Route>
+        <Route path='/' element={<OpenHome/>} />
+    <Route path='/sign' element={<SignIn/>} />
+    <Route path='/log' element={<LogIn/>} />
+    <Route path='/create' element={<CreateUsers/>} />
+    <Route path='/update' element={<UpdateUsers/>} />
+    <Route path='/All' element={<Users/>} />
+    <Route path='*' element={<NotFound/>} />
+
       </Routes>
       <Footer />
     </div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Carousel from '../components/Carousel';
+import Carousel from '../Carousel';
 
 export default function Film() {
     const  Gifls = [
