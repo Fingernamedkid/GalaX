@@ -1,0 +1,12 @@
+.fa-container {
+    display: flex;
+}
+
+.side {
+    flex: 0 0 300px; /* Définir une largeur fixe pour le menu latéral */
+}
+
+.main-content {
+    flex: 1; /* Le contenu principal prendra tout l'espace restant */
+    padding: 20px; /* Ajoutez des marges intérieures pour espacer le contenu */
+}

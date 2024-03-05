@@ -1,0 +1,105 @@
+.list{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 20px;
+    /* margin-top: 70px; */
+    max-width: 1200px;
+    margin: 0 auto; /* Pour centrer le contenu horizontalement */
+    
+    
+    
+
+}
+
+
+
+.menu{
+    background-color: rgb(34, 5, 49);
+    padding: 50px;
+    box-shadow: 10px 10px 10px 10px rgba(160, 6, 216, 0.2);
+}
+
+#house{
+    top: 0;
+    left: 10px;
+    margin-top: 5px;
+    position: absolute;
+    color: white;
+    z-index: 1;
+}
+
+.search {
+    padding: 10px;
+    position: absolute;
+    margin-top: 10px;
+    top: 0;
+    right: 160px; /* Positionnement du bouton search */
+    margin-right: 10px;
+    color: aliceblue;
+    background-color: black;
+    border-radius: 10px;
+    z-index: 1; /* Assurez-vous que les boutons sont au-dessus du reste du contenu */
+}
+
+.logout {
+    padding: 10px;
+    position: absolute;
+    margin-top: 10px;
+    top: 0;
+    right: 110px; 
+    margin-right: 10px;
+    color: aliceblue;
+    background-color: black;
+    border-radius: 10px;
+    z-index: 1; /* Assurez-vous que les boutons sont au-dessus du reste du contenu */
+}
+
+.gear{
+    padding: 10px;
+    position: absolute;
+    margin-top: 10px;
+    top: 0;
+    right: 30px; 
+    margin-right: 10px;
+    color: aliceblue;
+    background-color: black;
+    border-radius: 10px;
+    z-index: 1; 
+}
+
+
+
+
+
+#link{
+    color: white;
+}
+
+
+#link:hover {
+    color: rgb(239, 127, 146);
+}
+
+.search:hover{
+    color: aqua;
+}
+
+.logout:hover{
+    color: aqua;
+}
+
+.bar {
+    padding: 10px;
+    position: absolute;
+    margin-top: 10px;
+    top: 0;
+    right: 200px; /* Positionnement de la barre de recherche */
+    margin-right: 30px;
+    color: aliceblue;
+    background-color: black;
+    border-radius: 5px;
+    z-index: 1; /* Assurez-vous que la barre de recherche est au-dessus du reste du contenu */
+    border: 1px solid salmon;
+}
+

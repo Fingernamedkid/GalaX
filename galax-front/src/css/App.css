@@ -1,0 +1,11 @@
+@import "./Menu.css";
+@import "./Films.css";
+@import "./Footer.css";
+@import "./User.css";
+@import "./FAQ.css";
+@import "./SideMenu.css";
+@import "./SideFAQ.css";
+
+.App{
+    height: 1900px;
+}

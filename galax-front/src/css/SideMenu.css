@@ -1,0 +1,19 @@
+.side-menu{
+    background-color: rgb(34, 5, 49);
+    padding: 50px;
+    box-shadow: 10px 10px 10px 10px rgba(160, 6, 216, 0.2);
+    width: 300px;
+    height: 1900px;
+}
+
+#categorie{
+    font-size: 20px;
+    color: azure;
+    margin-left: 50px;
+}
+
+.arrow-btn{
+    top: 0;
+    left: 0;
+    
+}
