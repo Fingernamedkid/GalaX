@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  purge: ['./src/App.js','./src/components/Carousel.js', './src/components/Cards.js', './src/components/List.js','./src/components/ListControl.js','./src/components/ListController.js', './src/components/pages/Film.js'], // Adjust the path based on your project structure
+  purge: ['./src/App.js','./src/components/Carousel.js', './src/components/Card.js', './src/components/List.js','./src/components/ListControl.js','./src/components/ListController.js', './src/components/pages/Film.js'], // Adjust the path based on your project structure
   darkMode: true, // or 'media' or 'class'
   theme: {
     mytheme: {

@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faInfoCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'; 
 
 export default function Cards({ film }) {
@@ -41,13 +39,13 @@ export default function Cards({ film }) {
                 </div>
                 <div className="py-6 px-10 pb-2">
                     <Link to={`/film/${film.id}`} className="btn btn-outline rounded-r-full rounded-l-full w-44">
-                        <FontAwesomeIcon icon={faInfoCircle} />
+                        <i class="fa-regular fa-circle-info"></i>
                         Description
                     </Link>
                 </div>
                 <div className="py-2 px-10 pb-2">
                     <Link to="/watchlist" className="btn btn-info rounded-r-full rounded-l-full w-44">
-                        <FontAwesomeIcon icon={faPlusCircle} />
+                        <i class="fa-regular fa-circle-plus"></i>
                         Add to Watchlist
                     </Link>
                 </div>

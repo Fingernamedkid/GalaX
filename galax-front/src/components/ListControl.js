@@ -5,9 +5,12 @@ import ListController from './ListController.js';
 export default function CenteredList({movie}) {
     const [movies, setMovies] = useState([]);
     const [startIndex, setStartIndex] = useState(0);
+    
      {/* TODO
              Props s'appelle genre qui va changer le type de film qu'il cherche
              */}
+
+             
 
              
     useEffect(() => {
@@ -18,6 +21,7 @@ export default function CenteredList({movie}) {
                 const res = await fetch(API_URL);
                 const data = await res.json();
                 setMovies(data.results.slice(0, 25)); 
+                console.log(movies);
             } catch (error) {
                 console.error('Error fetching movies:', error);
             }
@@ -30,7 +34,7 @@ export default function CenteredList({movie}) {
     return (
         <div className="container my-24 place-content-center mx-auto "> {/* Centering the carousel */}
             <div id="List" className="mx-auto"> 
-            <ListController startIndex={startIndex} setStartIndex={setStartIndex}/>
+            <ListController startIndex={startIndex} setStartIndex={setStartIndex} movies={movies}/>
             
             <List movies={movies} startIndex={startIndex} />
             </div>
