@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faInfoCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
 export default function Cards({ film }) {
     const rating = Math.round(film.vote_average * 10);
@@ -39,14 +41,13 @@ export default function Cards({ film }) {
                 </div>
                 <div className="py-6 px-10 pb-2">
                     <Link to={`/film/${film.id}`} className="btn btn-outline rounded-r-full rounded-l-full w-44">
-                        <i class="fa-regular fa-circle-info"></i>
+                    <FontAwesomeIcon icon={faInfoCircle} />
                         Description
                     </Link>
                 </div>
                 <div className="py-2 px-10 pb-2">
                     <Link to="/watchlist" className="btn btn-info rounded-r-full rounded-l-full w-44">
-                        <i class="fa-regular fa-circle-plus"></i>
-                        Add to Watchlist
+                    <FontAwesomeIcon icon={faPlusCircle} />                        Add to Watchlist
                     </Link>
                 </div>
             </div>
