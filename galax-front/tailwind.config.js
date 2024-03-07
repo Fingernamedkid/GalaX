@@ -2,7 +2,13 @@
 module.exports = {
   content: [
     './src/App.js',
-    './src/**/*.{js,ts,jsx,tsx,mdx}'], 
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/Carousel.js', 
+    './src/components/Card.js', 
+    './src/components/List.js',
+    './src/components/ListControl.js',
+    './src/components/ListController.js', 
+    './src/components/pages/Item.js'], 
   theme: {
     mytheme: {
       "primary": "#9ca3af",

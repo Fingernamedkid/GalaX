@@ -1,5 +1,5 @@
 import React from "react";
-import style from "tailwindcss"
+
 export default function ListController({startIndex, setStartIndex , movies}){
     const scrollLeft = () => {
         setStartIndex(prevIndex => Math.max(prevIndex - 5, 0));

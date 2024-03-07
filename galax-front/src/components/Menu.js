@@ -4,15 +4,13 @@ import { NavLink } from "react-router-dom";
 function Menu() {
    
     const [showSearch, setShowSearch] = useState(false);
-    const [username, setUsername] = useState("");
-    
 
     return (
         <div className="menu">
             <section className="section-menu">
                 
 
-                <h1 style={{color:"white", fontSize:"20px", textAlign:"center"}} className="Welcome">Welcome to your GalaX account "{username} !"</h1>
+                <h1 style={{color:"white", fontSize:"20px", textAlign:"center"}} className="Welcome">Welcome to your GalaX account "[username] !"</h1>
                 <br></br>
                 <button className="logout" title="Déconnexion"><i className="fa-solid fa-power-off"></i></button>
 

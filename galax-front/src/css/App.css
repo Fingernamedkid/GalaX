@@ -9,8 +9,8 @@
 @tailwind components;
 @tailwind utilities;
 .App{
-    height: 1920px;
+    height: 1900px;
 }
 img{
-    margin: 0px;
+    margin: 0;
 }
