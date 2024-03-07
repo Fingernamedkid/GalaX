@@ -1,4 +1,4 @@
-.footer {
+#footer {
     background-color: black;
     width: 100%;
     padding: 50px;
@@ -9,7 +9,7 @@
     box-shadow: 10px 10px 10px 10px rgba(1, 0, 1, 0.2);
 }
 
-.bas-page, .info {
+#bas-page, #info {
     font-size: 15px;
     color: rgb(152, 76, 110);
     display: flex;
@@ -18,10 +18,10 @@
     margin-left: 200px;
 }
 
-.border {
+#border {
     border: 2px;
 }
 
-.copyright {
+#copyright {
     text-align: center;
 }

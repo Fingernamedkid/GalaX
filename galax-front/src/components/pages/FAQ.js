@@ -3,12 +3,12 @@ import SideMenuFAQ from "../SideMenuFAQ";
 
 export default function FAQ() {
     return (
-        <div className="fa-container">
-            <div className="side">
+        <div id="fa-container">
+            <div id="side">
                 <SideMenuFAQ />
             </div>
             {/* Contenu principal à droite */}
-            <div className="main-content">
+            <div id="main-content">
                 
                 
                 {/* Vos sections FAQ ici */}

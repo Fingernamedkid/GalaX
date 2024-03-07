@@ -5,7 +5,12 @@
 @import "./FAQ.css";
 @import "./SideMenu.css";
 @import "./SideFAQ.css";
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .App{
-    height: 1900px;
+    height: 1920px;
+}
+img{
+    margin: 0px;
 }

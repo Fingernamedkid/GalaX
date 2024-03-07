@@ -8,7 +8,7 @@ export default function Home(){
     return(
         <div>
             <Menu />
-            <CenteredList movie={movie}/>
+            <CenteredList type={movie}/>
         </div>
     )
 }
