@@ -11,11 +11,11 @@ import java.util.Date;
 public class Users {
     @Id
     private int idusers;
-    private String nom;
-    private String prenom;
-    private Date birthday;
+    private String first_name;
+    private String last_name;
+    private Date date;
     private String email;
-    private String passwrd;
+    private String password;
 
 }
 
