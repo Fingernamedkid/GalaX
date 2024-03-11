@@ -16,7 +16,10 @@ header{
 .submit{
     text-align: center;
 }
-
+input{
+    background-color: white;
+    border: 1   px solid;
+}
 footer{
 
     background-color: black;

@@ -16,8 +16,10 @@ import UpdateUsers from "./component/UpdateUsers";
 import Users from "./component/Users";
 import SignIn from "./component/SignIn";
 import LogIn from "./component/LogIn";
-
+import VerifyEmail from "./components/VerifyEmail";
 function App() {
+
+
   return (
     <div className="App" style={{ width: "100%" }}>
       <Routes>
@@ -31,6 +33,7 @@ function App() {
         <Route path="*" element={<SideMenu />}></Route>
         <Route path='/' element={<OpenHome/>} />
     <Route path='/sign' element={<SignIn/>} />
+    <Route path='/verify/:iduser' element={<VerifyEmail/>} />
     <Route path='/log' element={<LogIn/>} />
     <Route path='/create' element={<CreateUsers/>} />
     <Route path='/update' element={<UpdateUsers/>} />

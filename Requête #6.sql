@@ -3,9 +3,9 @@ CREATE DATABASE if not exists BdUsers;
 USE bdusers;
 CREATE TABLE users(
 idusers int PRIMARY KEY AUTO_INCREMENT not NULL,
-Nom VARCHAR(50) NOT NULL,
-Prenom VARCHAR(50) NOT NULL, 
-Birthday DATE NOT NULL,
+nom VARCHAR(50) NOT NULL,
+prenom VARCHAR(50) NOT NULL, 
+birthday DATE NOT NULL,
 email VARCHAR(50) NOT NULL,
 passwrd VARCHAR(15) NOT NULL
 );
@@ -14,7 +14,8 @@ CREATE TABLE FavoriteMovies(
 idFavoriteMovies int  AUTO_INCREMENT not NULL,
 idusers INT,
 FOREIGN KEY (idusers) REFERENCES Users(idusers),
-PRIMARY KEY(idFavoriteMovies)
+PRIMARY KEY(idFavoriteMovies),
+idTmdb int
 );
 
 CREATE TABLE genre(
@@ -43,5 +44,14 @@ idfavoriteGenre INT PRIMARY KEY   NOT NULL AUTO_INCREMENT,
 idusers INT,
 FOREIGN KEY (idusers) REFERENCES Users(idusers)
 );
+
+
+CREATE TABLE FavoriteSeries(
+idfavoriteGenre INT PRIMARY KEY   NOT NULL AUTO_INCREMENT,
+idusers INT,
+FOREIGN KEY (idusers) REFERENCES Users(idusers),
+idTmdb int
+);
+
 
 
