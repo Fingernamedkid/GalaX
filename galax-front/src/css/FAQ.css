@@ -1,12 +1,33 @@
 .fa-container {
     display: flex;
+    background-image: url('../components/img/galax.jpg');
 }
 
 .side {
-    flex: 0 0 300px; /* Définir une largeur fixe pour le menu latéral */
+    flex: 0 0 300px; 
 }
 
 .main-content {
-    flex: 1; /* Le contenu principal prendra tout l'espace restant */
-    padding: 20px; /* Ajoutez des marges intérieures pour espacer le contenu */
+    flex: 1;
+    padding: 20px; 
+}
+
+.faq-active {
+    background-color: blueviolet;
+    margin-top: 70px;
+    padding: 50px;
+    border-radius: 50px;
+    position: relative;
+    transition: transform 0.5s ease; 
+    border: 5px solid white;
+}
+
+.faq-active:hover {
+    transform: translateX(20px); 
+}
+
+
+.faq-titre, .faq-reponse{
+    font-size: 25px;
+
 }

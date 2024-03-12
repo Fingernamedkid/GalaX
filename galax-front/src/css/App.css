@@ -5,6 +5,7 @@
 @import "./FAQ.css";
 @import "./SideMenu.css";
 @import "./SideFAQ.css";
+@import "./Home.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

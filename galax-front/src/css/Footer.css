@@ -1,27 +1,40 @@
 .footer {
-    background-color: black;
+    background-image: url('../components/img/galax2.jpg');
     width: 100%;
     padding: 50px;
     position: fixed;
     bottom: 0;
-    left: 0; /* Assurez-vous qu'il est aligné à gauche */
-    right: 0; /* Assurez-vous qu'il est aligné à droite */
     box-shadow: 10px 10px 10px 10px rgba(1, 0, 1, 0.2);
 }
 
-.bas-page, .info {
-    font-size: 15px;
-    color: rgb(152, 76, 110);
-    display: flex;
-    justify-content: space-between;
-    width: 100px;
-    margin-left: 200px;
+.bas-page, .info{
+    color: white;
+    text-decoration: none;
+    
 }
 
-.border {
-    border: 2px;
+
+
+ 
+  
+.info-border {
+    font-size: 20px;
+    position: relative; 
+    color: white;
 }
 
-.copyright {
-    text-align: center;
+.info-border::after {
+    content: '';
+    position: absolute; 
+    left: 0; 
+    bottom: -4px; 
+    width: 0; 
+    height: 4px; 
+    background-color: rebeccapurple; 
+    transition: width 0.3s ease; 
 }
+
+.info-border:hover::after {
+    width: 100%; 
+}
+  

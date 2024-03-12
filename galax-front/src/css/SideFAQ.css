@@ -5,3 +5,20 @@
     width: 400px;
     height: 1900px;
 }
+
+.notfoundquestions{
+    margin-top: 200px;
+    
+}
+
+
+input[type="text"]:focus {
+    border-color: purple; 
+    outline: none; 
+    box-shadow: 0 0 5px purple; 
+}
+
+.send-msg{
+    background-color: black;
+    padding: 5px;
+}
