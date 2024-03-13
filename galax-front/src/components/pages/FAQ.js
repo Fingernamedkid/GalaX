@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import SideMenuFAQ from "../SideMenuFAQ";
 
+
 export default function FAQ() {
     const [expanded, setExpanded] = useState({
         rep1: false,
@@ -20,14 +21,17 @@ export default function FAQ() {
     };
 
     return (
-        <div className="fa-container">
+        <div className="fa-container bckg-faq">
+
             <div className="side">
                 <SideMenuFAQ />
             </div>
+            
            
-            <div className="main-content">
-               
-                <section className="faq-active">
+       
+
+       <div className="main-content">
+            <section className="faq-active">
                     <h3 className="faq-titre"> Comment puis-je regarder des films et des séries sur ce site ?</h3>
                     <br></br>
                     {expanded.rep1 && <p className="faq-reponse">Pour regarder des films et des séries sur notre site, il vous suffit de vous inscrire gratuitement et de parcourir notre catalogue. </p>}
@@ -85,6 +89,9 @@ export default function FAQ() {
                 </section>
                 
             </div>
-        </div>
+
+
+       </div>
+
     );
 }

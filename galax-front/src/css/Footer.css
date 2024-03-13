@@ -1,5 +1,5 @@
 .footer {
-    background-image: url('../components/img/galax2.jpg');
+    background-color: transparent;
     width: 100%;
     padding: 50px;
     position: fixed;
@@ -21,6 +21,7 @@
     font-size: 20px;
     position: relative; 
     color: white;
+    text-decoration: none;
 }
 
 .info-border::after {
@@ -38,3 +39,9 @@
     width: 100%; 
 }
   
+@media  screen and (max-width:  768px) {
+    .info-border{
+        margin-right: 20px;
+    }
+    
+}

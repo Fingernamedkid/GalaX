@@ -3,7 +3,7 @@
     justify-content: space-between;
     list-style: none;
     font-size: 20px;
-    /* margin-top: 70px; */
+    margin-top: 70px; 
     max-width: 1200px;
     margin: 0 auto; /* Pour centrer le contenu horizontalement */
     
@@ -101,5 +101,11 @@
     border-radius: 5px;
     z-index: 1; /* Assurez-vous que la barre de recherche est au-dessus du reste du contenu */
     border: 1px solid salmon;
+}
+
+@media screen and (max-width: 800px) {
+    .search, .logout, .gear, .bar{
+        margin-top: 70px;
+    }
 }
 
