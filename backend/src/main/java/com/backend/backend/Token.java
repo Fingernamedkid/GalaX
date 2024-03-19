@@ -1,0 +1,19 @@
+package com.backend.backend.repository;
+
+public class Token {
+        public String maketoken(){
+            String AlphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                    + "0123456789"
+                    + "abcdefghijklmnopqrstuvxyz";
+
+            // create StringBuffer size of AlphaNumericString
+            StringBuilder sb = new StringBuilder(20);
+
+            for (int i = 0; i < 20; i++) {
+                int index = (int)(AlphaNumericString.length()* Math.random());
+                sb.append(AlphaNumericString.charAt(index));
+            }
+
+            return sb.toString();
+    };
+}
