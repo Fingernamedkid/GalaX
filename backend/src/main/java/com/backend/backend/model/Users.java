@@ -1,5 +1,6 @@
 package com.backend.backend.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Data;
@@ -14,6 +15,7 @@ public class Users {
     private String nom;
     private String prenom;
     private Date birthday;
+    @Column (name = "email")
     private String email;
     private String passwrd;
 

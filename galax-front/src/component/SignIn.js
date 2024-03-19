@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import "./SignIn.css";
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 function SignIn() {
     const [status, setStatus] = useState(false)
@@ -19,7 +18,7 @@ function SignIn() {
 
 
     }
-    const history = useNavigate();
+
     const submitNewClient = (e) => {
         e.preventDefault();
         axios.post("http://localhost:5050/createU", users)

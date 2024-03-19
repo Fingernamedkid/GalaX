@@ -3,22 +3,12 @@ import React from 'react';
 import axios from 'axios';
 
 export default function VerifyEmail() {
-    const { id } = useParams();
+    const  { iduser }  = useParams();
 
     const submitNewClient = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:5050/verifyU/${id}`) // Send userid directly
+        axios.get(`http://localhost:5050/verifyU/${iduser}`) // Send userid directly
             .then((res) => {
-                
-
-
-
-
-
-
-
-
-                
                 console.log(res.data[0]);
             })
             .catch((error) => {

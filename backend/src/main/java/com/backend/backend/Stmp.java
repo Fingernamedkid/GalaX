@@ -8,7 +8,7 @@ public class Stmp {
         String host = "smtp.gmail.com";
         String port = "587";
         String from = "teppi0307@gmail.com";
-        String password = "Tompihu2275185";
+        String password = "twwx fvfh ztqd pkdd";
         String subject = "Test Email";
         String text = "This is a test email sent from Java application.";
 
@@ -18,7 +18,6 @@ public class Stmp {
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.host", host);
         properties.put("mail.smtp.port", port);
-        // Create session
         Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(from, password);
@@ -26,16 +25,12 @@ public class Stmp {
         });
 
         try {
-            // Create MimeMessage object
             MimeMessage message = new MimeMessage(session);
 
-            // Set From: header field of the header
             message.setFrom(new InternetAddress(from));
 
-            // Set To: header field of the header
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
-            // Set Subject: header field
             message.setSubject(subject);
 
             // Set the actual message
@@ -47,5 +42,9 @@ public class Stmp {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+    }
+
+    public static void main(String[] args) {sendEmailVerificationEmail("minhtri.trandang2005@gmail.com");
     }
 }
