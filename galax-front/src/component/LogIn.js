@@ -1,8 +1,40 @@
-import React from "react";
+import React, {useState} from "react";
+
+import axios from 'axios';;
 import "./LogIn.css";
 
 
 function LogIn() {
+    const [users, setUsers] = useState({
+        nom:"login",
+        prenom:"login",
+        birthday:"",
+        email:"",
+        passwrd:""
+
+    })
+    const handleChange=(e) =>{
+        const value = e.target.value;
+        setUsers({...users,[e.target.name]: value})
+
+
+    }
+
+    const submitClient = (e) => {
+        e.preventDefault();
+        axios.post("http://localhost:5050/loginU", users)
+            .then((res ) => {
+                if(res.data[0] === "Success"){
+                    console.log(res.data[0]);
+                    let path = '/home'
+                    window.location.href = path
+                }else{
+                    console.log(res.data);
+                }
+            }).catch((error) => {
+            console.log(error);
+        })
+    }
     return(
         <div>
             <form action="" method="post">
@@ -26,7 +58,7 @@ function LogIn() {
 
                         <div className="submit">
 
-                            <button type="submit" className="btn btn-outline-success">Connexion</button>
+                            <button type="submit" className="btn btn-outline-success" onClick={submitClient}>Connexion</button>
                         </div>
                 </form>
 

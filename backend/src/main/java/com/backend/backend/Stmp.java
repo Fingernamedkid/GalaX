@@ -10,7 +10,8 @@ public class Stmp {
         String from = "teppi0307@gmail.com";
         String password = "twwx fvfh ztqd pkdd";
         String subject = "Test Email";
-        String text = "This is a test email sent from Java application.";
+        String text = "Veryfied Email";
+
 
 
         Properties properties = new Properties();

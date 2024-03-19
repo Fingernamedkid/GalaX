@@ -52,4 +52,24 @@ public class Controller {
         respond.add(String.valueOf(userId));
         return respond;
     }
+    @PostMapping("/loginU")
+    public List<String> login(@RequestBody Users users) {
+        Users existed = usersRepository.findUsersByEmail(users.getEmail());
+        List<String> respond = new ArrayList<>();
+
+        if ((existed == null) || !existed.getEmail().equals(users.getEmail())) {
+            if ((existed == null) || !existed.getPasswrd().equals(users.getPasswrd())) {
+                respond.add("Success");
+            }
+        } else {
+            respond.add("failed");
+        }
+
+        int userid = users.getIdusers();
+
+        respond.add("Success");
+        respond.add(String.valueOf(userid));
+        return respond;
+    }
+
 }
