@@ -4,13 +4,13 @@ import javax.mail.internet.*;
 
 import java.util.Properties;
 public class Stmp {
-    public static void sendEmailVerificationEmail( String to) {
+    public static void sendEmailVerificationEmail( String to, String token) {
         String host = "smtp.gmail.com";
         String port = "587";
         String from = "teppi0307@gmail.com";
         String password = "twwx fvfh ztqd pkdd";
         String subject = "Test Email";
-        String text = "Veryfied Email";
+        String text = "Veryfied Email \n https://localhost/choose/"+token;
 
 
 
@@ -46,6 +46,5 @@ public class Stmp {
 
     }
 
-    public static void main(String[] args) {sendEmailVerificationEmail("minhtri.trandang2005@gmail.com");
-    }
+
 }
