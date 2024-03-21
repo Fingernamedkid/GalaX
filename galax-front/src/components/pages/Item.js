@@ -138,7 +138,7 @@ export default function Film() {
                                     <div className='w-28 flex justify-center px-2'>
 
                                     <img src={company.logo_path ? `https://image.tmdb.org/t/p/w500${company.logo_path}` : gif(Gifls)} 
-    alt="Company Logo" className=" max-w-auto h-16 mr-2" />
+                                    alt="Company Logo" className=" max-w-auto h-16 mr-2" />
                                     </div>
                                     <div>
                                         <h3 className="text-lg font-bold overflow-hidden text-starlight-white">{company.name}</h3>
@@ -199,10 +199,7 @@ export default function Film() {
                                             </div>
                                             </h3>
                                             <div id="content" className='mt-3'>
-    {review.content && (
-        <div dangerouslySetInnerHTML={{ __html: phrases(review.content) }} />
-    )}
-</div>
+                                            {review.content && (<div dangerouslySetInnerHTML={{ __html: phrases(review.content) }} />)}</div>
                                 </div>
                                 </div>
                             ))}

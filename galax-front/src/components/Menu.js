@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import axios from "axios";
 function Menu() {
    
     const [showSearch, setShowSearch] = useState(false);
-
+    let username;
+ axios.get("http://localhost:5050/getnameU", users).then((res ) => {
+        username=res
+    }).catch((error) => {
+    console.log(error);
+})
     return (
         <div className="menu">
             <section className="section-menu">

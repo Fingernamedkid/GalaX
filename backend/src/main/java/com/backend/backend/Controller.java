@@ -25,17 +25,13 @@ public class Controller {
     public List<String> users1(@RequestBody Users users) {
         Users existed = usersRepository.findUsersByEmail(users.getEmail());
         List<String> respond = new ArrayList<>();
-
-         if ((existed == null) || !existed.getEmail().equals(users.getEmail())) {
-         usersRepository.save(users);
-         respond.add("Success");
-         } else {
-         respond.add("failed");
-         }
-
+        if (existed == null) {
+            usersRepository.save(users);
+            respond.add("Success");
+        } else {
+            respond.add("failed");
+        }
         int userid = users.getIdusers();
-
-        respond.add("Success");
         respond.add(String.valueOf(userid));
         return respond;
     }
@@ -43,7 +39,6 @@ public class Controller {
     @GetMapping("/verifyU/{id}")
     public List<String> verifyU(@PathVariable("id") int userId) {
         System.out.println(userId);
-
         Users user = usersRepository.findUsersByIdusers(userId);
         List<String> respond = new ArrayList<>();
         String mail = user.getEmail();
@@ -56,21 +51,32 @@ public class Controller {
     @PostMapping("/loginU")
     public List<String> login(@RequestBody Users users) {
         Users existed = usersRepository.findUsersByEmail(users.getEmail());
+        System.out.printf(existed.toString());
         List<String> respond = new ArrayList<>();
 
-        if ((existed == null) || !existed.getEmail().equals(users.getEmail())) {
-            if ((existed == null) || !existed.getPasswrd().equals(users.getPasswrd())) {
+
+        if ((existed != null) && existed.getEmail().equals(users.getEmail())) {
+            if (existed.getPasswrd().equals(users.getPasswrd())) {
                 respond.add("Success");
+                respond.add(String.valueOf(existed.getIdusers()));
             }
         } else {
-            respond.add("failed");
+            respond.add("Failed");
         }
 
-        int userid = users.getIdusers();
-
-        respond.add("Success");
-        respond.add(String.valueOf(userid));
+        System.out.println(respond);
         return respond;
     }
+    @GetMapping("/getEmailU/{email}")
+    public int getEmailbyName(@PathVariable("email") int users) {
+        System.out.println(usersRepository.findUsersByIdusers(users).getIdusers());
+        return usersRepository.findUsersByIdusers(users).getIdusers();
+    }
+    @GetMapping("/getnameU")
+    public String getNamebyEmail(@RequestBody String users) {
+        return usersRepository.findUsersByEmail(users).getEmail();
+    }
+
+
 
 }
