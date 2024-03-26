@@ -1,0 +1,46 @@
+
+.headerL{
+    background-color: rgb(7, 6, 72);
+    text-align: center;
+    color: #61dafb;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+}
+.form2{
+    padding-top: 300px;
+    text-align: center;
+}
+.case{
+    text-align: center;
+    margin: 30px;
+}
+.linkpass{
+    text-align: center;
+    padding-left: 80px;
+}
+.submit{
+    padding: 20px;
+    padding-left: 100px;
+    text-align: center;
+}
+
+.social i{
+    font-size: 30px;
+    float: right;
+    height: 30px;
+}
+footer{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: black;
+    position: fixed;
+    color: blueviolet;
+    height: 100px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+
+}

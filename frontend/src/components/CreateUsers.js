@@ -1,11 +1,12 @@
-import React from "react";
+
 
 
 function CreateUsers() {
+
+
+
     return(
-        <div>
-            CreateUsers
-        </div>
+        <div></div>
     );
 }
 export default CreateUsers;

@@ -1,10 +1,11 @@
 import React from "react";
+import "./cssdiectory/notfound.css";
 
 
 function NotFound() {
     return(
-        <div>
-            Not found
+        <div className="nFound">
+
         </div>
     );
 }
