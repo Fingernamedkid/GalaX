@@ -3,11 +3,7 @@
     justify-content: space-between;
     list-style: none;
     font-size: 20px;
-<<<<<<< HEAD
     margin-top: 70px; 
-=======
-    /* margin-top: 70px; */
->>>>>>> origin/Rachel
     max-width: 1200px;
     margin: 0 auto; /* Pour centrer le contenu horizontalement */
     
@@ -20,7 +16,6 @@
 
 .menu{
     background-color: rgb(34, 5, 49);
-<<<<<<< HEAD
     padding: 50px;
     box-shadow: 10px 10px 10px 10px rgba(160, 6, 216, 0.2);
 }
@@ -40,20 +35,10 @@
     margin-top: 10px;
     top: 0;
     right: 160px; /* Positionnement du bouton search */
-=======
-    padding: 20px;
-    box-shadow: 10px 10px 10px 10px rgba(160, 6, 216, 0.2);
-}
-
-.logout, .search{
-    padding: 10px;
-    float: right;
->>>>>>> origin/Rachel
     margin-right: 10px;
     color: aliceblue;
     background-color: black;
     border-radius: 10px;
-<<<<<<< HEAD
     z-index: 1; /* Assurez-vous que les boutons sont au-dessus du reste du contenu */
 }
 
@@ -87,11 +72,6 @@
 
 
 
-=======
-    
-}
-
->>>>>>> origin/Rachel
 #link{
     color: white;
 }
@@ -109,7 +89,6 @@
     color: aqua;
 }
 
-<<<<<<< HEAD
 .bar {
     padding: 10px;
     position: absolute;
@@ -129,6 +108,4 @@
         margin-top: 70px;
     }
 }
-=======
->>>>>>> origin/Rachel
 
