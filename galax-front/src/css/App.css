@@ -11,7 +11,7 @@
 @tailwind components;
 @tailwind utilities;
 .App{
-    height: 1900px;
+    height: 700px;
 }
 img{
     margin: 0;
