@@ -7,7 +7,7 @@ import UpdateUsers from "./components/UpdateUsers";
 import Users from "./components/Users";
 import SignIn from "./components/SignIn";
 import LogIn from "./components/LogIn";
-import PassForgot from "./components/homeconnectcss/PassForgot";
+import PassForgot from "./components/PassForgot";
 
 function App() {
   return (
