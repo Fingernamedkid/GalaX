@@ -1,6 +1,7 @@
 @import "./Menu.css";
 @import "./Films.css";
 @import "./Footer.css";
+<<<<<<< HEAD
 @import "./User.css";
 @import "./FAQ.css";
 @import "./SideMenu.css";
@@ -16,3 +17,6 @@
 img{
     margin: 0;
 }
+=======
+@import "./User.css";
+>>>>>>> origin/Rachel

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .pageUser{
     display: flex;
     background-color: rgb(43, 40, 40);
@@ -43,3 +44,20 @@
 
 
 
+=======
+img {
+    width: 200px;
+    height: 100px;
+    margin-top:  10px;
+    margin-left: 100px;
+}
+
+.pageUser{
+    width: auto;
+}
+
+.informations{
+    font-size: small;
+}
+
+>>>>>>> origin/Rachel
