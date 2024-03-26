@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import axios from "axios";
-function Menu() {
-   
-    const [showSearch, setShowSearch] = useState(false);
-    let username;
- axios.get("http://localhost:5050/getnameU", users).then((res ) => {
-        username=res
-    }).catch((error) => {
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+const users = cookies.get('auth');
+const username = await axios.get("http://localhost:5050/getnameU/"+ cookies.get('auth')).catch((error) => {
     console.log(error);
 })
+function Menu() {
+    
+    const [showSearch, setShowSearch] = useState(false);
+    
     return (
         <div className="menu">
             <section className="section-menu">
-                
-
-                <h1 style={{color:"white", fontSize:"20px", textAlign:"center"}} className="Welcome">Welcome to your GalaX account "[username] !"</h1>
+                <h1 style={{color:"white", fontSize:"20px", textAlign:"center"}} className="Welcome">Welcome to your GalaX account {username.data}!</h1>
                 <br></br>
                 <button className="logout" title="Déconnexion"><i className="fa-solid fa-power-off"></i></button>
 

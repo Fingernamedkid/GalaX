@@ -3,21 +3,32 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
-export default function Cards({ film }) {
+export default function Cards({ film ,movie}) {
     const rating = Math.round(film.vote_average * 10);
     function getClassByRate(vote) {
-        if (vote >= 80) {
+        switch (true){
+
+        case(vote >= 80) :
             return { className: 'text-lime-400 font-bold text-lg md:text-2xl', emoji: '😍' };
-        } else if (vote >= 70) {
+
+        case (vote >= 70) :
             return { className: 'text-lime-400 font-bold text-lg md:text-2xl', emoji: '😊' };
-        } else if (vote >= 50) {
+
+        case (vote >= 50) :
             return { className: 'text-yellow-400 font-bold text-lg md:text-2xl', emoji: '😐' };
-        } else if (vote >= 30) {
+
+        case (vote >= 30) :
             return { className: 'text-orange-400 font-bold text-lg md:text-2xl', emoji: '☹️' };
-        } else {
-            return { className: 'text-red-400 font-bold text-lg md:text-2xl', emoji: '🤬' };
+
+        case (vote != 0):
+           return { className: 'text-red-400 font-bold text-lg md:text-2xl', emoji: '🤬' };
+
+        default:
+            return { className: 'text-gry-400 font-bold text-lg md:text-2xl', emoji: '' };
+
         }
-    }
+        }
+    
 
     return (
         <div className="flex-none w-1/7 md:w-1/5 h-max  mr-2 md:mr-4  flex flex-col">
@@ -40,7 +51,7 @@ export default function Cards({ film }) {
                     </div>
                 </div>
                 <div className="py-6 px-10 pb-2">
-                    <Link to={`/film/${film.id}`} className="btn btn-outline rounded-r-full rounded-l-full w-44">
+                    <Link to={`/${movie}/${film.id}`} className="btn btn-outline rounded-r-full rounded-l-full w-44">
                     <FontAwesomeIcon icon={faInfoCircle} />
                         Description
                     </Link>

@@ -229,20 +229,23 @@ function gif(gifs) {
 function rating( value ) {
     let color = '';
     let rating ='';
-    if (value < 6) {
-        color = 'bg-red-500';
-        rating = 'This is so ass 🤮'
-    } else if (value <= 7) {
-        color = 'bg-orange-500';
-        rating = 'Mid as hell 🥱'
+    switch (true){
+
+        case (value < 6) :
+            color = 'bg-red-500';
+            rating = 'This is so ass 🤮'
+         case (value <= 7) :
+            color = 'bg-orange-500';
+            rating = 'Mid as hell 🥱'
+            
+         case (value <= 8) :
+            color = 'bg-green-500';
+            rating = 'They cook a bit👀'
+         default:
+            color = 'bg-green-800';
+            rating = 'PEAK FICTION✍️🔥'
+        }
     
-    } else if (value <= 8) {
-        color = 'bg-green-500';
-        rating = 'They cook a bit👀'
-    } else {
-        color = 'bg-green-800';
-        rating = 'PEAK FICTION✍️🔥'
-    }
 
     return (
         <div className='flex justify-start w-64'>
