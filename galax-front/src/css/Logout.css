@@ -1,55 +1,48 @@
-.logout-stn{
-    text-align: center;
-    background-image: url("../components/img/galax3.jpg");
-    padding-top: 100px;
-    padding-bottom: 100px;
-    border-radius: 50%;
-    box-shadow: 10px 10px 10px 10px rgba(250, 245, 252, 0.2);
-    
+.logout-stn {
+  text-align: center;
+  background-image: url("../components/img/galax3.jpg");
+  padding-top: 100px;
+  padding-bottom: 100px;
+  border-radius: 50%;
+  box-shadow: 10px 10px 10px 10px rgba(250, 245, 252, 0.2);
 }
 
-.logout-container{
-    padding: 300px;
-    background-color: rgb(51, 2, 46);
-    
+.logout-container {
+  padding: 300px;
+  background-color: rgb(51, 2, 46);
 }
 
-.log-btn1, .log-btn2{
-    margin-top: 100px;
-    margin-right: 40px;
-    margin-left: 30px;
-    background-color: black;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
+.log-btn1,
+.log-btn2 {
+  margin-top: 100px;
+  margin-right: 40px;
+  margin-left: 30px;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
 }
 
-.log-btn1:hover{
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2), 0  6px 20px 0 rgba(0,0,0,.19);
-    border: 2px solid greenyellow;
+.log-btn1:hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 2px solid greenyellow;
 }
 
-.log-btn2:hover{
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,.2), 0  6px 20px 0 rgba(0,0,0,.19);
-    border: 2px solid rgb(218, 18, 18);
+.log-btn2:hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 2px solid rgb(218, 18, 18);
 }
 
-@media screen and (max-width: 900px ){
-   .log-btn1, .log-btn2 {
-       display: block;
-       float: none;
-       width: 100%;
-       margin-bottom: 10px;
-   }
-   
-  
-    
+@media screen and (max-width: 900px) {
+  .log-btn1,
+  .log-btn2 {
+    display: block;
+    float: none;
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
-
-
-
-
