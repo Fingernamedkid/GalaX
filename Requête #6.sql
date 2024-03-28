@@ -3,11 +3,11 @@ CREATE DATABASE if not exists BdUsers;
 USE bdusers;
 CREATE TABLE users(
 idusers int PRIMARY KEY AUTO_INCREMENT not NULL,
-nom VARCHAR(50) NOT NULL,
-prenom VARCHAR(50) NOT NULL, 
-birthday DATE NOT NULL,
+first_name VARCHAR(50) NOT NULL,
+last_name VARCHAR(50) NOT NULL, 
+`date` DATE NOT NULL,
 email VARCHAR(50) NOT NULL,
-passwrd VARCHAR(15) NOT NULL
+password VARCHAR(15) NOT NULL
 );
 
 CREATE TABLE FavoriteMovies(

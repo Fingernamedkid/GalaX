@@ -56,7 +56,7 @@ public class Controller {
 
 
         if ((existed != null) && existed.getEmail().equals(users.getEmail())) {
-            if (existed.getPasswrd().equals(users.getPasswrd())) {
+            if (existed.getPassword().equals(users.getPassword())) {
                 respond.add("Success");
                 respond.add(String.valueOf(existed.getIdusers()));
             }
@@ -72,9 +72,9 @@ public class Controller {
         System.out.println(usersRepository.findUsersByIdusers(users).getIdusers());
         return usersRepository.findUsersByIdusers(users).getIdusers();
     }
-    @GetMapping("/getnameU")
-    public String getNamebyEmail(@RequestBody String users) {
-        return usersRepository.findUsersByEmail(users).getEmail();
+    @GetMapping("/getnameU/{id}")
+    public String getNamebyEmail(@PathVariable("id") int id) {
+        return usersRepository.findUsersByIdusers(id).getFirst_name();
     }
 
 

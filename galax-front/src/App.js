@@ -9,14 +9,14 @@ import Home from "./components/pages/Home";
 import SideMenu from "./components/SideMenu";
 import Item from "./components/pages/Item";
 //********************** */
-import OpenHome from "./component/OpenHome";
-import NotFound from "./component/NotFound";
-import CreateUsers from "./component/CreateUsers";
-import UpdateUsers from "./component/UpdateUsers";
-import Users from "./component/Users";
-import SignIn from "./component/SignIn";
-import LogIn from "./component/LogIn";
-
+import OpenHome from "./components/OpenHome";
+import NotFound from "./components/NotFound";
+import CreateUsers from "./components/CreateUsers";
+import UpdateUsers from "./components/UpdateUsers";
+import Users from "./components/Users";
+import SignIn from "./components/SignIn";
+import LogIn from "./components/LogIn";
+import VerifyEmail from "./components/VerifyEmail";
 function App() {
   return (
     <div className="App" style={{ width: "100%" }}>
@@ -26,16 +26,17 @@ function App() {
         <Route path="/user" element={<User />}></Route>
         <Route path="/faq" element={<FAQ />}></Route>
         <Route path="/home" element={<Home />}></Route>
-        <Route path="/film/:id" element={<Item />}></Route>
+        <Route path="/movie/:id" element={<Item />}></Route>
         <Route path="/side" element={<SideMenu />}></Route>
         <Route path="*" element={<SideMenu />}></Route>
         <Route path='/' element={<OpenHome/>} />
-    <Route path='/sign' element={<SignIn/>} />
-    <Route path='/log' element={<LogIn/>} />
-    <Route path='/create' element={<CreateUsers/>} />
-    <Route path='/update' element={<UpdateUsers/>} />
-    <Route path='/All' element={<Users/>} />
-    <Route path='*' element={<NotFound/>} />
+        <Route path="/verify/:iduser" element={<VerifyEmail />}/>
+        <Route path='/sign' element={<SignIn/>} />
+        <Route path='/log' element={<LogIn/>} />
+        <Route path='/create' element={<CreateUsers/>} />
+        <Route path='/update' element={<UpdateUsers/>} />
+        <Route path='/All' element={<Users/>} />
+        <Route path='*' element={<NotFound/>} />
 
       </Routes>
       

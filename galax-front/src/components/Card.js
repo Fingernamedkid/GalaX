@@ -24,7 +24,7 @@ export default function Cards({ film ,movie}) {
            return { className: 'text-red-400 font-bold text-lg md:text-2xl', emoji: '🤬' };
 
         default:
-            return { className: 'text-gry-400 font-bold text-lg md:text-2xl', emoji: '' };
+            return { className: 'text-gray-400 font-bold text-lg md:text-2xl', emoji: 'No Review' };
 
         }
         }
@@ -46,7 +46,7 @@ export default function Cards({ film ,movie}) {
                     </h3>
                     <div className="text-lg text-ellipsis">
                         <p className={getClassByRate(rating).className}>
-                            {getClassByRate(rating).emoji}{rating}
+                            {getClassByRate(rating).emoji}{rating==0?"":rating}
                         </p>
                     </div>
                 </div>
