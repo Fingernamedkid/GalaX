@@ -8,8 +8,6 @@ import FAQ from "./components/pages/FAQ";
 import Home from "./components/pages/Home";
 import SideMenu from "./components/SideMenu";
 import Item from "./components/pages/Item";
-import About from "./components/pages/About";
-import LogoutPage from "./components/pages/LogoutPage";
 //********************** */
 import OpenHome from "./component/OpenHome";
 import NotFound from "./component/NotFound";
@@ -18,7 +16,6 @@ import UpdateUsers from "./component/UpdateUsers";
 import Users from "./component/Users";
 import SignIn from "./component/SignIn";
 import LogIn from "./component/LogIn";
-
 
 function App() {
   return (
@@ -29,11 +26,9 @@ function App() {
         <Route path="/user" element={<User />}></Route>
         <Route path="/faq" element={<FAQ />}></Route>
         <Route path="/home" element={<Home />}></Route>
-        <Route path="/about" element={<About/>}></Route>
         <Route path="/film/:id" element={<Item />}></Route>
         <Route path="/side" element={<SideMenu />}></Route>
         <Route path="*" element={<SideMenu />}></Route>
-        <Route path="/logout" element={<LogoutPage/>}></Route>
         <Route path='/' element={<OpenHome/>} />
     <Route path='/sign' element={<SignIn/>} />
     <Route path='/log' element={<LogIn/>} />

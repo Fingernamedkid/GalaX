@@ -138,7 +138,7 @@ export default function Film() {
                                     <div className='w-28 flex justify-center px-2'>
 
                                     <img src={company.logo_path ? `https://image.tmdb.org/t/p/w500${company.logo_path}` : gif(Gifls)} 
-    alt="Company Logo" className=" max-w-auto h-16 mr-2" />
+                                    alt="Company Logo" className=" max-w-auto h-16 mr-2" />
                                     </div>
                                     <div>
                                         <h3 className="text-lg font-bold overflow-hidden text-starlight-white">{company.name}</h3>
@@ -199,10 +199,7 @@ export default function Film() {
                                             </div>
                                             </h3>
                                             <div id="content" className='mt-3'>
-    {review.content && (
-        <div dangerouslySetInnerHTML={{ __html: phrases(review.content) }} />
-    )}
-</div>
+                                            {review.content && (<div dangerouslySetInnerHTML={{ __html: phrases(review.content) }} />)}</div>
                                 </div>
                                 </div>
                             ))}
@@ -232,20 +229,23 @@ function gif(gifs) {
 function rating( value ) {
     let color = '';
     let rating ='';
-    if (value < 6) {
-        color = 'bg-red-500';
-        rating = 'This is so ass 🤮'
-    } else if (value <= 7) {
-        color = 'bg-orange-500';
-        rating = 'Mid as hell 🥱'
+    switch (true){
+
+        case (value < 6) :
+            color = 'bg-red-500';
+            rating = 'This is so ass 🤮'
+         case (value <= 7) :
+            color = 'bg-orange-500';
+            rating = 'Mid as hell 🥱'
+            
+         case (value <= 8) :
+            color = 'bg-green-500';
+            rating = 'They cook a bit👀'
+         default:
+            color = 'bg-green-800';
+            rating = 'PEAK FICTION✍️🔥'
+        }
     
-    } else if (value <= 8) {
-        color = 'bg-green-500';
-        rating = 'They cook a bit👀'
-    } else {
-        color = 'bg-green-800';
-        rating = 'PEAK FICTION✍️🔥'
-    }
 
     return (
         <div className='flex justify-start w-64'>
