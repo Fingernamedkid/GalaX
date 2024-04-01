@@ -1,15 +1,14 @@
 .logout-stn {
   text-align: center;
-  background-image: url("../components/img/galax3.jpg");
   padding-top: 100px;
   padding-bottom: 100px;
-  border-radius: 50%;
-  box-shadow: 10px 10px 10px 10px rgba(250, 245, 252, 0.2);
+  border: 5px solid black;
 }
 
 .logout-container {
   padding: 300px;
   background-color: rgb(51, 2, 46);
+  height: 900px;
 }
 
 .log-btn1,
@@ -45,4 +44,6 @@
     width: 100%;
     margin-bottom: 10px;
   }
+
+
 }

@@ -10,6 +10,7 @@ import SideMenu from "./components/SideMenu";
 import Item from "./components/pages/Item";
 import About from "./components/pages/About";
 import LogoutPage from "./components/pages/LogoutPage";
+import MsgValidation from "./components/pages/MsgValidation";
 //********************** */
 import OpenHome from "./component/OpenHome";
 import NotFound from "./component/NotFound";
@@ -22,7 +23,7 @@ import LogIn from "./component/LogIn";
 
 function App() {
   return (
-    <div className="App" style={{ width: "100%" }}>
+    <div className="App" style={{ width: "100%"}}>
       <Routes>
         <Route path="/films" element={<Films />}></Route>
         <Route path="/series" element={<Series />}></Route>
@@ -34,6 +35,7 @@ function App() {
         <Route path="/side" element={<SideMenu />}></Route>
         <Route path="*" element={<SideMenu />}></Route>
         <Route path="/logout" element={<LogoutPage/>}></Route>
+        <Route path="/valid" element={<MsgValidation/>}></Route>
         <Route path='/' element={<OpenHome/>} />
     <Route path='/sign' element={<SignIn/>} />
     <Route path='/log' element={<LogIn/>} />

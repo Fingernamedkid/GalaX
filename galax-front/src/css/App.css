@@ -7,12 +7,13 @@
 @import "./SideFAQ.css";
 @import "./Home.css";
 @import "./Logout.css";
+@import "./About.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.App{
-    height: 700px;
-}
+/* .App{
+    height: 800px;
+} */
 img{
     margin: 0;
 }
