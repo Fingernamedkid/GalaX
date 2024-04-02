@@ -51,7 +51,7 @@ public class Controller {
     @PostMapping("/loginU")
     public List<String> login(@RequestBody Users users) {
         Users existed = usersRepository.findUsersByEmail(users.getEmail());
-        System.out.printf(existed.toString());
+        System.out.printf(users.toString());
         List<String> respond = new ArrayList<>();
 
 
@@ -62,6 +62,11 @@ public class Controller {
             }
         } else {
             respond.add("Failed");
+            try{
+                System.out.println(existed.toString());
+            }catch (Exception e){
+                System.out.println(e);
+            }
         }
 
         System.out.println(respond);

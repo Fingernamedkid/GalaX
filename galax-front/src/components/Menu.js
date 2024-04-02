@@ -4,9 +4,12 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import axios from "axios";
 const cookies = new Cookies();
+
 const users = cookies.get('auth');
 const username = await axios.get("http://localhost:5050/getnameU/"+ cookies.get('auth')).catch((error) => {
-    console.log(error);})
+    console.log(error)
+    
+    ;})
 
 function Menu() {
     const [showSearch, setShowSearch] = useState(false);

@@ -6,9 +6,9 @@ import "./cssdiectory/LogIn.css";
 
 function LogIn() {
     const [users, setUsers] = useState({
-        nom:"login",
-        prenom:"login",
-        birthday:"",
+        first_name:"login",
+        last_name:"login",
+        date:"",
         email:"",
         password:""
 
@@ -16,9 +16,8 @@ function LogIn() {
     const handleChange=(e) =>{
         const value = e.target.value;
         setUsers({...users,[e.target.name]: value})
-
-
     }
+
     const cookies = new Cookies(null, { path: '/' });
 
 
@@ -41,11 +40,7 @@ function LogIn() {
     return(
         <div>
             <header>
-
                 <h1 className="headerL">Log In</h1>
-
-
-
             </header>
 
             <form className={"form2"} action="" method="post">
@@ -62,9 +57,9 @@ function LogIn() {
                         <label htmlFor="password"><span  className="color_bleu">P</span>assword: <span  className="color_bleu">* </span></label>
 
                         <input type="password" name="password"
-                           required
-                           onChange={(e) => handleChange(e)}
-                           devalue={users.password}/>
+                              required
+                              onChange={(e) => handleChange(e)}
+                              devalue={users.password}/>
                         
                     </div>
 

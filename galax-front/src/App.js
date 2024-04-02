@@ -17,6 +17,8 @@ import Users from "./components/Users";
 import SignIn from "./components/SignIn";
 import LogIn from "./components/LogIn";
 import VerifyEmail from "./components/VerifyEmail";
+/**TODO Cookie verification, protected route
+ **/
 function App() {
   return (
     <div className="App" style={{ width: "100%" }}>
