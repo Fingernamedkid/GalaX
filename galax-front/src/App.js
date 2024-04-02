@@ -23,6 +23,7 @@ function App() {
   return (
     <div className="App" style={{ width: "100%" }}>
       <Routes>
+        
         <Route path="/films" element={<Films />}></Route>
         <Route path="/series" element={<Series />}></Route>
         <Route path="/user" element={<User />}></Route>

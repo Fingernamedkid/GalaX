@@ -57,7 +57,9 @@ export default function Cards({ film ,movie}) {
                     </Link>
                 </div>
                 <div className="py-2 px-10 pb-2">
-                    <Link to="/watchlist" className="btn btn-info rounded-r-full rounded-l-full w-44">
+                    <Link to="
+                    methodpost pour envoyer le film ou series a la bd
+                    " className="btn btn-info rounded-r-full rounded-l-full w-44">
                     <FontAwesomeIcon icon={faPlusCircle} />                        Add to Watchlist
                     </Link>
                 </div>
