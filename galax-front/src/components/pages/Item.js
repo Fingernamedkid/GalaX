@@ -234,13 +234,15 @@ function rating( value ) {
         case (value < 6) :
             color = 'bg-red-500';
             rating = 'This is so ass 🤮'
+            break;
          case (value <= 7) :
             color = 'bg-orange-500';
             rating = 'Mid as hell 🥱'
-            
+            break;
          case (value <= 8) :
             color = 'bg-green-500';
             rating = 'They cook a bit👀'
+            break;
          default:
             color = 'bg-green-800';
             rating = 'PEAK FICTION✍️🔥'

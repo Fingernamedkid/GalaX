@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState ,useEffect} from "react";
 import Menu from "../Menu";
 import CenteredList from "../ListControl";
 import Cookies from 'universal-cookie';
@@ -6,18 +6,15 @@ import axios from 'axios';
 import Footer from "../Footer";
 
 
-const cookies = new Cookies();
-console.log(cookies.get('auth'))
-const link = "http://localhost:5050/getEmailU/"+ cookies.get('auth');
-let username = await axios.get(link).catch((error) => {
-    console.log(error);
-})
-
-
-
 export default function Home(){
-    
-    if (cookies.get('auth') != username.data){
+    const cookies = new Cookies();
+    const [name,setUsername] = useState("");
+    const lien = "http://localhost:5050/home/getEmailU/"+ cookies.get('auth')
+    useEffect(() => {
+        let username = axios.get(lien).catch((error) => {console.log(error);})
+        setUsername(username.data)
+     }, [lien, name]);
+    if (cookies.get('auth') !== name){
         window.location.href = "/"
     }
     return(

@@ -17,6 +17,7 @@ import Users from "./components/Users";
 import SignIn from "./components/SignIn";
 import LogIn from "./components/LogIn";
 import VerifyEmail from "./components/VerifyEmail";
+import PrivateRoutes from "./components/PrivateRoute";
 /**TODO Cookie verification, protected route
  **/
 function App() {
@@ -28,7 +29,11 @@ function App() {
         <Route path="/series" element={<Series />}></Route>
         <Route path="/user" element={<User />}></Route>
         <Route path="/faq" element={<FAQ />}></Route>
-        <Route path="/home" element={<Home />}></Route>
+        <Route path="/home" element={<PrivateRoutes/>}>
+
+
+        <Route path="/home" element={<Home />}/>
+        </Route>
         <Route path="/movie/:id" element={<Item />}></Route>
         <Route path="/side" element={<SideMenu />}></Route>
         <Route path="*" element={<SideMenu />}></Route>

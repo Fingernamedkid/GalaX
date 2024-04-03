@@ -3,7 +3,7 @@ import "./cssdiectory/SignIn.css";
 import axios from 'axios';
 
 function SignIn() {
-    const [status, setStatus] = useState(false)
+    const [status, setStatus] = useState(true)
     const [users, setUsers] = useState({
         first_name:"",
         last_name:"",
@@ -24,7 +24,7 @@ function SignIn() {
         axios.post("http://localhost:5050/createU", users)
             .then((res ) => {
                 if(res.data[0] === "Success"){
-                    setStatus(true);
+                    setStatus(false);
                     console.log(res.data[0]);
                     let path = '/verify/' + res.data[1]
                     window.location.href = path
@@ -38,11 +38,11 @@ function SignIn() {
     return(
         <div id={"backC"}>
 
-        <header>
+        <div id="head">
 
             <h1 id="headerr">Veuillez-Vous Inscrire !</h1>
 
-        </header>
+        </div>
         <div id="formSign">
 
             <form method="post" onSubmit={(e) => submitNewClient(e) }>
@@ -105,9 +105,7 @@ function SignIn() {
                 </div>
 
             </form>
-            {status?
-                <h2></h2>:
-                <h2>Registration Failed! Please try again.</h2>}
+            {!status && <h2>Registration Failed! Please try again.</h2>}
 
             <footer>
                 <div id="social">  <i className="fa-brands fa-instagram"></i>

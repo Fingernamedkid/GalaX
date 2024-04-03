@@ -1,7 +1,7 @@
 import React from "react";
-import img from "../img/profil.png";
+import img from "./img/profil.png";
 import { NavLink } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 export default function User() {
 
@@ -31,7 +31,7 @@ export default function User() {
       
       <div className="col-md-15 personal-info">
         <div className="alert alert-info alert-dismissable" style={{marginLeft:"150px", marginTop:"50px"}}>
-          <a className="panel-close close" data-dismiss="alert"></a> 
+          <a className="panel-close close" data-dismiss="alert" href=""></a> 
           <i className="fa fa-coffee"></i>
           This is an <strong>.alert</strong>. Use this to show important messages to the user.
         </div>

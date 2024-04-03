@@ -72,12 +72,12 @@ public class Controller {
         System.out.println(respond);
         return respond;
     }
-    @GetMapping("/getEmailU/{email}")
+    @GetMapping("/home/getEmailU/{email}")
     public int getEmailbyName(@PathVariable("email") int users) {
         System.out.println(usersRepository.findUsersByIdusers(users).getIdusers());
         return usersRepository.findUsersByIdusers(users).getIdusers();
     }
-    @GetMapping("/getnameU/{id}")
+    @GetMapping("/home/getnameU/{id}")
     public String getNamebyEmail(@PathVariable("id") int id) {
         return usersRepository.findUsersByIdusers(id).getFirst_name();
     }

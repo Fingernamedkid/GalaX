@@ -16,7 +16,7 @@ export default function CenteredList({movie, link, name}) {
             console.log(data);
         };
         fetchMovies();
-    }, [movie]); 
+    }, [movie, link]); 
     
     return (
         <div className="container my-24 place-content-center mx-auto "> {/* Centering the carousel */}

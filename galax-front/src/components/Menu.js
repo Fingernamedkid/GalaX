@@ -1,27 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import axios from "axios";
-const cookies = new Cookies();
-
-const users = cookies.get('auth');
-const username = await axios.get("http://localhost:5050/getnameU/"+ cookies.get('auth')).catch((error) => {
-    console.log(error)
-    
-    ;})
 
 function Menu() {
+
+    const cookies = new Cookies();
+    const [name,setName] = useState("");
+    const lien = "http://localhost:5050/home/getnameU/"+ cookies.get('auth');
+    useEffect(() => {
+        let username = axios.get().catch((error) => {console.log(error);})
+        setName(username.data)
+     }
+     ,[name, lien]);
+    if (cookies.get('auth') !== name){
+        window.location.href = "/"
+    }
     const [showSearch, setShowSearch] = useState(false);
 
    
     const logout = useNavigate();
 
-    console.log(users)
     return (
         <div className="menu">
             <section className="section-menu">
-                <h1 style={{ color: "white", fontSize: "20px", textAlign: "center" }} className="Welcome">Welcome to your GalaX account {username.data}</h1>
+                <h1 style={{ color: "white", fontSize: "20px", textAlign: "center" }} className="Welcome">Welcome to your GalaX account {name}</h1>
                 <br></br>
                 <button className="logout" title="Déconnexion" onClick={() => logout("/logout")}><i className="fa-solid fa-power-off"></i></button>
 
@@ -44,8 +48,8 @@ function Menu() {
 
         <div class="collapse navbar-collapse justify-content-between" id="nav">
             <ul class="navbar-nav">
-            <NavLink to="/films"><li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">Films</a></li></NavLink>
-            <NavLink to="/series"><li class="nav-item"><a class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">Series</a></li></NavLink>
+            <NavLink to="/films"><li class="nav-item"><button class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">Films</button></li></NavLink>
+            <NavLink to="/series"><li class="nav-item"><button class="nav-link text-light text-uppercase font-weight-bold px-3" href="#">Series</button></li></NavLink>
             </ul>
         </div>
     </nav>      
