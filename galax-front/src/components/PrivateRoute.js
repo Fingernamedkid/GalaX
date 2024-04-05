@@ -5,7 +5,7 @@ const PrivateRoutes = () => {
     let auth = cookies.get("auth");
     
     return(
-        auth ==="undefined" ? <Outlet/> : <Navigate to="/"/>
+        auth ==="undefined" ? <Navigate to="/"/>: <Outlet/>
     )
 }
 

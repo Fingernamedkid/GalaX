@@ -18,9 +18,13 @@ import SignIn from "./components/SignIn";
 import LogIn from "./components/LogIn";
 import VerifyEmail from "./components/VerifyEmail";
 import PrivateRoutes from "./components/PrivateRoute";
+import { CookiesProvider, useCookies } from 'react-cookie'
 /**TODO Cookie verification, protected route
  **/
+
 function App() {
+  const [cookies, setCookie] = useCookies(['user'])
+
   return (
     <div className="App" style={{ width: "100%" }}>
       <Routes>
@@ -29,11 +33,10 @@ function App() {
         <Route path="/series" element={<Series />}></Route>
         <Route path="/user" element={<User />}></Route>
         <Route path="/faq" element={<FAQ />}></Route>
-        <Route path="/home" element={<PrivateRoutes/>}>
+        <CookiesProvider>
 
-
-        <Route path="/home" element={<Home />}/>
-        </Route>
+        <Route path="/home" element={<PrivateRoutes/>}><Route path="/home" element={<Home />}/></Route>
+        </CookiesProvider>
         <Route path="/movie/:id" element={<Item />}></Route>
         <Route path="/side" element={<SideMenu />}></Route>
         <Route path="*" element={<SideMenu />}></Route>

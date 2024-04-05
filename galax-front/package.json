@@ -23,7 +23,7 @@
     "react-scripts": "5.0.1",
     "react-youtube": "^10.1.0",
     "ui": "^0.2.4",
-    "universal-cookie": "^7.1.0",
+    "universal-cookie": "^7.1.4",
     "universal-token": "^0.0.1-security",
     "web-vitals": "^2.1.4"
   },

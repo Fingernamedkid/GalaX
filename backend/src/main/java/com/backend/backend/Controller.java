@@ -23,6 +23,7 @@ public class Controller {
     // te preparer les requette si tu as 12 repo tu inject 12 autoriwere.
     @PostMapping("/createU")
     public List<String> users1(@RequestBody Users users) {
+        System.out.println(users.toString());
         Users existed = usersRepository.findUsersByEmail(users.getEmail());
         List<String> respond = new ArrayList<>();
         if (existed == null) {
