@@ -36,7 +36,7 @@ function App() {
         <Route path="/movie/:id" element={<Item />}></Route>
         <Route path="/side" element={<SideMenu />}></Route>
         <Route path="*" element={<SideMenu />}></Route>
-        <Route path="/choiceG" element={<ChoiceGenres/>}/>
+        <Route path="/choice/:id" element={<ChoiceGenres/>}/>
         <Route path='/' element={<OpenHome/>} />
         <Route path="/verify/:iduser" element={<VerifyEmail />}/>
         <Route path='/sign' element={<SignIn/>} />

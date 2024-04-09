@@ -1,13 +1,14 @@
 import "./cssdiectory/ChoicesGenres.css";
 
-import Movies from "../../src/JsonFiles/list.json";
-import Series from "../../src/JsonFiles/list2.json";
+import Movies from "../../src/components/JsonFiles/list.json";
+import Series from "../../src/components/JsonFiles/list2.json";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 
 // Auteur: Lorsen
 function ChoiceGenres() {
-
+    const { id } = useParams();
     return (
         <div className={"mainContainer"}>
 

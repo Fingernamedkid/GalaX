@@ -13,7 +13,6 @@ export default function CenteredList({movie, link, name}) {
             const res = await fetch(API_URL);
             const data = await res.json();
             setMovies(data.results.slice(0, 25)); 
-            console.log(data);
         };
         fetchMovies();
     }, [movie, link]); 

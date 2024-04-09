@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-export default function SideMenu(){
+export default function SideMenu({list, setGenre, modeGenre}){
+    const listgenre = list
+    const mode = modeGenre
+    console.log(list)
+    
     return(
         <div className="side-menu">
             <NavLink to="/home"><i className="fa-solid fa-arrow-left" id="arrow-btn"
@@ -11,8 +15,18 @@ export default function SideMenu(){
             <section className="border">
                 {/* Section Border */}
             </section>
+            <tr>
 
-            {/* TODO : Mettre les éléments de la sidebar en fonction des catégories */}
+            {listgenre.map((genre) => (
+                <li>
+
+                <button onClick={setGenre([!mode[0], genre.name])}>
+
+                    {genre.name}
+                </button>
+                </li>
+            ))}
+             </tr>
         </div>
     )
 }

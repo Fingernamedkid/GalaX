@@ -9,28 +9,17 @@ function Films() {
     const fetchMovies = async () => {
         const res = await fetch(API_URL);
         const data = await res.json();
-        setMovies(data.genres.slice(0,5)); 
+        setMovies(data.genres); 
     };
     fetchMovies();
 }, [listgenre]); 
   return (
     <div className="films-body flex">
-      
-      <SideMenu />
-      
+      <SideMenu list={listgenre}/>
       <section className="film-container">
-      {listgenre.map((genre, index) =>  
- 
-      <CenteredList movie={movie} link={`https://api.themoviedb.org/3/discover/tv?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genre.id}&api_key=8b64af438dcdf72c27a5df692c7ebf1b`} name={genre.name}/>
-   
-      
-      )}
-      
-
+      {listgenre.slice(0,5).map((genre) =>  <CenteredList movie={movie} link={`https://api.themoviedb.org/3/discover/tv?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genre.id}&api_key=8b64af438dcdf72c27a5df692c7ebf1b`} name={genre.name}/>)}
       </section>
     </div>
-   
-    
   );
 }
 

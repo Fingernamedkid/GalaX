@@ -43,7 +43,7 @@ public class Controller {
         Users user = usersRepository.findUsersByIdusers(userId);
         List<String> respond = new ArrayList<>();
         String mail = user.getEmail();
-        String token = Token.maketoken();
+        String token = String.valueOf(user.getIdusers());
         sendEmailVerificationEmail(mail,token);
         respond.add("Success");
         respond.add(String.valueOf(userId));
