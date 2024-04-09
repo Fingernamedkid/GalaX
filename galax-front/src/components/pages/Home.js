@@ -18,8 +18,8 @@ export default function Home(){
         if (name[1] == cookie){
             <NavLink to="/"/>
         }
-     }, [lien, name, cookie]);
-     console.log(name)
+     }, []);
+      
      
     
     return(

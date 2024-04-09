@@ -2,10 +2,12 @@ import "./cssdiectory/ChoicesGenres.css";
 
 import Movies from "../../src/JsonFiles/list.json";
 import Series from "../../src/JsonFiles/list2.json";
+import { useEffect } from "react";
 
 
 // Auteur: Lorsen
 function ChoiceGenres() {
+
     return (
         <div className={"mainContainer"}>
 
