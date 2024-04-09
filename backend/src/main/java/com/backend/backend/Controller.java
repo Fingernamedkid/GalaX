@@ -22,7 +22,7 @@ public class Controller {
     FavoriteMoviesRepository favoriteMoviesRepository;
     // te preparer les requette si tu as 12 repo tu inject 12 autoriwere.
     @PostMapping("/createU")
-    public List<String>  users1(@RequestBody Users users) {
+    public List<String> users1(@RequestBody Users users) {
         System.out.println(users.toString());
         Users existed = usersRepository.findUsersByEmail(users.getEmail());
         List<String> respond = new ArrayList<>();
@@ -73,10 +73,13 @@ public class Controller {
         System.out.println(respond);
         return respond;
     }
-    @GetMapping("/home/getEmailU/{email}")
-    public int getEmailbyName(@PathVariable("email") int users) {
-        System.out.println(usersRepository.findUsersByIdusers(users).getIdusers());
-        return usersRepository.findUsersByIdusers(users).getIdusers();
+    @GetMapping("/home/getIdU/{email}")
+    public List<String> getEmailbyName(@PathVariable("email") int users) {
+        Users finding = usersRepository.findUsersByIdusers(users);
+        List<String> respond = new ArrayList<>();
+        respond.add(finding.getFirst_name());
+        respond.add(String.valueOf(finding.getIdusers()));
+        return respond;
     }
     @GetMapping("/home/getnameU/{id}")
     public String getNamebyEmail(@PathVariable("id") int id) {

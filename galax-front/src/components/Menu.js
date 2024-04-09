@@ -4,19 +4,10 @@ import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import axios from "axios";
 
-function Menu() {
+function Menu({name}) {
 
-    const cookies = new Cookies();
-    const [name,setName] = useState("");
-    const lien = "http://localhost:5050/home/getnameU/"+ cookies.get('auth');
-    useEffect(() => {
-        let username = axios.get().catch((error) => {console.log(error);})
-        setName(username.data)
-     }
-     ,[name, lien]);
-    if (cookies.get('auth') !== name){
-        window.location.href = "/"
-    }
+    const username = name
+    
     const [showSearch, setShowSearch] = useState(false);
 
    
@@ -25,7 +16,7 @@ function Menu() {
     return (
         <div className="menu">
             <section className="section-menu">
-                <h1 style={{ color: "white", fontSize: "20px", textAlign: "center" }} className="Welcome">Welcome to your GalaX account {name}</h1>
+                <h1 style={{ color: "white", fontSize: "20px", textAlign: "center" }} className="Welcome">Welcome to your GalaX account {username}</h1>
                 <br></br>
                 <button className="logout" title="Déconnexion" onClick={() => logout("/logout")}><i className="fa-solid fa-power-off"></i></button>
 
