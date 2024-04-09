@@ -33,10 +33,8 @@ function App() {
         <Route path="/series" element={<Series />}></Route>
         <Route path="/user" element={<User />}></Route>
         <Route path="/faq" element={<FAQ />}></Route>
-        <CookiesProvider>
 
-        <Route path="/home" element={<PrivateRoutes/>}><Route path="/home" element={<Home />}/></Route>
-        </CookiesProvider>
+        <Route path="/home" element={<Home />}/>
         <Route path="/movie/:id" element={<Item />}></Route>
         <Route path="/side" element={<SideMenu />}></Route>
         <Route path="*" element={<SideMenu />}></Route>
