@@ -7,7 +7,7 @@ first_name VARCHAR(50) NOT NULL,
 last_name VARCHAR(50) NOT NULL, 
 `date` DATE NOT NULL,
 email VARCHAR(50) NOT NULL,
-`password`users VARCHAR(15) NOT NULL
+`password` VARCHAR(15) NOT NULL
 );
 
 CREATE TABLE FavoriteMovies(
