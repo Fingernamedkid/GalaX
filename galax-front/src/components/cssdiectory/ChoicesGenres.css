@@ -1,0 +1,25 @@
+
+
+
+.mainContainer{
+    float: left;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background: black;
+}
+.moviesSection{
+    color: red;
+    padding: 50px;
+    margin: 30px;
+}
+.seriesSection{
+    float: left;
+    color: red;
+    padding: 50px;
+    margin: 30px;
+}
+.titreMovies{
+    text-align: center;
+
+}
