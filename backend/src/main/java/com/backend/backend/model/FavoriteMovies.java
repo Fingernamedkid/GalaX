@@ -1,9 +1,8 @@
 package com.backend.backend.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 
 @Entity
@@ -11,11 +10,20 @@ import lombok.Data;
 public class FavoriteMovies {
 
     @Id
-   private int  idFavoriteMovies;
-   private  int idTmdb ;
-    private  int idUser ;
+    @Column(name = "idFavoriteMovies")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //AutoIncrement
+    private int idFavoriteMovies;
 
-    @ManyToOne
-    private Users users;
+    @Column(name = "id_user", nullable = false)
+    private int idUser;
+
+
+
+    @Column(name = "idTmdb", nullable = false)
+
+    private long idTmdb;
+
+
 
 }

@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from "react";
 import List from "./List";
-export default function ListFilm({ genre, link, movie }) {
+export default function ListFilm({ genre, link, movie, listFavor}) {
     const [movies, setMovies] = useState([]);
     const [startIndex, setStartIndex] = useState(0);
-         
     useEffect(() => {
         const list = []
         const API_URL = link; 
@@ -15,7 +14,6 @@ export default function ListFilm({ genre, link, movie }) {
             }
             setMovies(list)
         };
-        console.log(movies)
         fetchMovies();
     }, [link]); 
     
@@ -27,7 +25,7 @@ export default function ListFilm({ genre, link, movie }) {
       <h1 className="text-center text-2xl font-bold mb-4">{genre}</h1>
         </div>
       {movies.map((listmovie, index) => (
-  <List key={index} movies={listmovie} startIndex={0} movie={movie} />
+  <List key={index} movies={listmovie} startIndex={0} movie={movie} listFav={listFavor}/>
 ))}
 
     </div>

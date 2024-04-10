@@ -10,12 +10,14 @@ import { NavLink } from "react-router-dom";
 export default function Home(){
     const cookies = new Cookies();
     const [name,setUsername] = useState([]);
+    const [listFav,setlistFav] = useState([]);
     const lien = "http://localhost:5050/home/getIdU/"+ cookies.get('auth')
+    const lien2 = "http://localhost:5050/getFilms/"+ cookies.get('auth')
     const cookie = cookies.get('auth')
     useEffect(() => {
         
-            axios.get(lien).then((res) => {setUsername(res.data)}).catch((error) => {window.location.href="/"})
-        
+        axios.get(lien).then((res) => {setUsername(res.data)}).catch((error) => {window.location.href="/"})
+
         
      }, []);
       

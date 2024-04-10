@@ -2,14 +2,20 @@ import React, { useEffect, useState } from "react";
 import SideMenu from "../SideMenu";
 import CenteredList from "../ListControl";
 import ListFilm from "../ListFilms";
+import Cookies from "universal-cookie";
+import axios from "axios";
 function Films() {
+  const cookies = new Cookies();
   const movie = "movie";
   const [listgenre, setMovies] = useState([]);
+  const [listFav, setlistFav] = useState([]);
   const [modeGenre, setGenre] = useState({
     isActive: false,
     selectedGenre: "",
     id: 0
   });
+  const lien2 = "http://localhost:5050/getFilms/"+ cookies.get('auth')
+
 
   useEffect(() => {
     const API_URL =
@@ -18,9 +24,14 @@ function Films() {
       const res = await fetch(API_URL);
       const data = await res.json();
       setMovies(data.genres);
+      
     };
     fetchMovies();
-  }, [listgenre]);
+    axios.get(lien2).then((res) => {setlistFav(res.data)}).catch((error) => {console.log(error)}  );
+
+    
+    
+  }, []);
   
      
   
@@ -34,6 +45,7 @@ function Films() {
            genre={modeGenre.selectedGenre}
            link={`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_genres=${modeGenre.id}&api_key=8b64af438dcdf72c27a5df692c7ebf1b`}
            movie={movie}
+           listFavor={listFav}
         />
         :listgenre.slice(0, 5).map((genre) => (
           <CenteredList

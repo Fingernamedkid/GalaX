@@ -21,7 +21,7 @@ export default function CenteredList({movie, link, name}) {
         <div className="container my-24 place-content-center mx-auto "> {/* Centering the carousel */}
             <div id="List" className="mx-auto"> 
             <ListController startIndex={startIndex} setStartIndex={setStartIndex} movies={movies} name={name}/>
-            <List movies={movies} startIndex={startIndex} movie={movie}/>
+            <List movies={movies} startIndex={startIndex} movie={movie} listFav=""/>
             </div>
         </div>
     );

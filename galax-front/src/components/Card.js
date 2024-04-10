@@ -2,9 +2,33 @@ import React from 'react';
 import { Link } from 'react-router-dom'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
-
-export default function Cards({ film ,movie}) {
+import Cookies from 'universal-cookie';
+import axios from 'axios';
+export default function Cards({ film ,movie, listFavorite}) {
+    const cookies = new Cookies();
+    const isFav = false;
+    var list = []
+    list.push(listFavorite)
+    console.log(list)
     
+    const submitFav = (e) => {
+        const value = cookies.get("auth")
+        const fav = {
+            idUser: value,
+            idTmdb: e
+        }
+        axios.post("http://localhost:5050/saveFilm", fav)
+            .then((res ) => {
+                if(res.data[0] === "Success"){
+                    console.log("yes")
+                }else{
+                    console.log(res.data);
+                }
+            }).catch((error) => {
+            console.log(error);
+        })
+    }
+      
     const rating = Math.round(film.vote_average * 10);
     function getClassByRate(vote) {
         switch (true){
@@ -58,11 +82,9 @@ export default function Cards({ film ,movie}) {
                     </Link>
                 </div>
                 <div className="py-2 px-10 pb-2">
-                    <Link to="
-                    methodpost pour envoyer le film ou series a la bd
-                    " className="btn btn-info rounded-r-full rounded-l-full w-44">
-                    <FontAwesomeIcon icon={faPlusCircle} />                        Add to Watchlist
-                    </Link>
+                    <btn className="btn btn-info rounded-r-full rounded-l-full w-44" onClick={() =>submitFav(film.id)}>
+                    <FontAwesomeIcon icon={faPlusCircle} />                       {list.includes(film.id)? "":"Add to Watchlist"}
+                    </btn>
                 </div>
             </div>
         </div>
