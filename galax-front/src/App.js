@@ -8,6 +8,7 @@ import FAQ from "./components/pages/FAQ";
 import Home from "./components/pages/Home";
 import SideMenu from "./components/SideMenu";
 import About from "./components/pages/About";
+import MsgValidation from "./components/MsgValidation";
 import Item from "./components/pages/Item";
 import ChoiceGenres from "./components/ChoiceGenres";
 import Tv from "./components/pages/Tv";
@@ -28,7 +29,7 @@ import VerifyEmail from "./components/VerifyEmail";
 function App() {
 
   return (
-    <div className="App" style={{ width: "100%" }}>
+    <div className="App" style={{ width: "100%"}}>
       <Routes>
         
         <Route path="/films" element={<Films />}></Route>
@@ -37,6 +38,7 @@ function App() {
         <Route path="/faq" element={<FAQ />}></Route>
         <Route path="/home" element={<Home />}/>
         <Route path="/about" element={<About />} />
+        <Route path="/validation" element={<MsgValidation/>} />
         <Route path="/movie/:id" element={<Item />}></Route>
         <Route path="/tv/:id" element={<Tv />}></Route>
         <Route path="/side" element={<SideMenu />}></Route>
