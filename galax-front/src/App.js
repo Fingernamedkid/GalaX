@@ -9,6 +9,7 @@ import Home from "./components/pages/Home";
 import SideMenu from "./components/SideMenu";
 import Item from "./components/pages/Item";
 import ChoiceGenres from "./components/ChoiceGenres";
+import Tv from "./components/pages/Tv";
 //********************** */
 import OpenHome from "./components/OpenHome";
 import NotFound from "./components/NotFound";
@@ -18,7 +19,8 @@ import Users from "./components/Users";
 import SignIn from "./components/SignIn";
 import LogIn from "./components/LogIn";
 import VerifyEmail from "./components/VerifyEmail";
-import PrivateRoutes from "./components/PrivateRoute";
+
+
 /**TODO Cookie verification, protected route
  **/
 
@@ -34,6 +36,7 @@ function App() {
         <Route path="/faq" element={<FAQ />}></Route>
         <Route path="/home" element={<Home />}/>
         <Route path="/movie/:id" element={<Item />}></Route>
+        <Route path="/tv/:id" element={<Tv />}></Route>
         <Route path="/side" element={<SideMenu />}></Route>
         <Route path="*" element={<SideMenu />}></Route>
         <Route path="/choice/:id" element={<ChoiceGenres/>}/>

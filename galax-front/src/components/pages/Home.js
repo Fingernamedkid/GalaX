@@ -12,12 +12,11 @@ export default function Home(){
     const [name,setUsername] = useState([]);
     const lien = "http://localhost:5050/home/getIdU/"+ cookies.get('auth')
     const cookie = cookies.get('auth')
-    var username;
     useEffect(() => {
-        username = axios.get(lien).catch((error) => {console.log(error);}).then((res) => {setUsername(res.data)})
-        if (name[1] == cookie){
-            <NavLink to="/"/>
-        }
+        
+            axios.get(lien).then((res) => {setUsername(res.data)}).catch((error) => {window.location.href="/"})
+        
+        
      }, []);
       
      

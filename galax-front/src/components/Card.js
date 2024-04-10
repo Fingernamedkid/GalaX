@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInfoCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
 export default function Cards({ film ,movie}) {
+    
     const rating = Math.round(film.vote_average * 10);
     function getClassByRate(vote) {
         switch (true){
@@ -40,10 +41,10 @@ export default function Cards({ film ,movie}) {
                 />
             </div>
             <div className="flex-grow flex flex-col justify-between">
-                <div className="px-4 py-2">
-                    <h3 className="font-bold text-white-800 text-xl mb-2 truncate">
-                        {film.title}
-                    </h3>
+                <div className="px-4 py-2 overflow-hidden">
+                <h3 className="font-bold text-white-800 text-xl mb-2 h-12 truncate">
+          {film.title}
+        </h3>
                     <div className="text-lg text-ellipsis">
                         <p className={getClassByRate(rating).className}>
                             {getClassByRate(rating).emoji}{rating===0?"":rating}

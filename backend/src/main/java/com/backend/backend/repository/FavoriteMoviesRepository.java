@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FavoriteMoviesRepository extends JpaRepository<FavoriteMovies,Integer> {
+    FavoriteMovies findAllByIdUser(int movieId);
 }

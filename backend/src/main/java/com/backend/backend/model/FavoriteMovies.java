@@ -12,7 +12,8 @@ public class FavoriteMovies {
 
     @Id
    private int  idFavoriteMovies;
-   private  String NomFilm ;
+   private  int idTmdb ;
+    private  int idUser ;
 
     @ManyToOne
     private Users users;
