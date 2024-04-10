@@ -1,67 +1,41 @@
 /* Styles par défaut */
 .fa-container {
     display: flex;
+    height: 900px;
+    position: fixed;
+    background-color: white;
 }
 
 .side {
-    flex: 0 0 300px; 
+    flex: 0 0 300px;
 }
 
 .main-content {
     flex: 1;
-    padding: 20px; 
+    padding: 20px;
 }
 
-.faq-active {
-    background-color: blueviolet;
-    margin-top: 70px;
-    padding: 50px;
-    border-radius: 50px;
-    position: relative;
-    transition: transform 0.5s ease; 
-    border: 5px solid white;
-}
 
-.faq-active:hover {
-    transform: translateX(20px); 
-}
 
-.faq-titre, .faq-reponse {
-    font-size: 25px;
-}
 
-.bckg-faq {
-    background-color: rgb(32, 29, 29);
-    background-size: cover; 
-    width: 100%;
-    height: 260vh; 
-}
 
 /* Media Queries pour les écrans de petite taille */
 @media screen and (max-width: 768px) {
     .fa-container {
-        flex-direction: column; /* Change la direction en colonne */
+        flex-direction: column;
     }
 
     .side {
-        flex: none; /* Annule la flexibilité du menu latéral */
-        width: 100%; /* Prend toute la largeur de l'écran */
+        flex: none;
+        width: 100%;
     }
 
     .main-content {
-        flex: none; /* Annule la flexibilité du contenu principal */
-        width: 100%; /* Prend toute la largeur de l'écran */
+        flex: none;
+        width: 100%;
     }
 
-    .faq-active {
-        margin-top: 20px; /* Réduit la marge supérieure */
-        padding: 20px; /* Réduit le rembourrage */
-        border-radius: 20px; /* Réduit le rayon de la bordure */
-    }
 
-    .faq-titre, .faq-reponse {
-        font-size: 20px; /* Réduit la taille de la police */
-    }
 
-  
+
 }
