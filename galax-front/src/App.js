@@ -7,6 +7,7 @@ import Series from "./components/pages/Series";
 import FAQ from "./components/pages/FAQ";
 import Home from "./components/pages/Home";
 import SideMenu from "./components/SideMenu";
+import About from "./components/pages/About";
 import Item from "./components/pages/Item";
 import ChoiceGenres from "./components/ChoiceGenres";
 import Tv from "./components/pages/Tv";
@@ -35,6 +36,7 @@ function App() {
         <Route path="/user" element={<User />}></Route>
         <Route path="/faq" element={<FAQ />}></Route>
         <Route path="/home" element={<Home />}/>
+        <Route path="/about" element={<About />} />
         <Route path="/movie/:id" element={<Item />}></Route>
         <Route path="/tv/:id" element={<Tv />}></Route>
         <Route path="/side" element={<SideMenu />}></Route>
