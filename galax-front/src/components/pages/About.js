@@ -1,6 +1,6 @@
 import React from "react";
 import img from "../img/profil.png";
-import img2 from "../img/profilfemme.jpg";
+import img2 from "../img/profil.png";
 import { NavLink } from "react-router-dom";
 
 
