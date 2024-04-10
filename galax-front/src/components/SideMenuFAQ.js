@@ -7,7 +7,7 @@ export default function SideMenuFAQ(){
 
     const handleChange=() =>{
         setInputValue("");
-//hi
+
 
     }
     return(
