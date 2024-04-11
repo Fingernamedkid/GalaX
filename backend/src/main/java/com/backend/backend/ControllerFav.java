@@ -15,28 +15,32 @@ public class ControllerFav {
     @Autowired
     FavoriteMoviesRepository favoriteMoviesRepository;
     @PostMapping("/saveFilm")
-    public List<String> users1(@RequestBody FavoriteMovies users) {
-        System.out.println(users.toString());
+    public List<String> users1(@RequestBody FavoriteMovies film) {
+        System.out.println(film.toString());
 
-        List<FavoriteMovies> listFavMovies =  favoriteMoviesRepository.findAllByIdUser(users.getIdUser());
+        List<FavoriteMovies> listFavMovies =  favoriteMoviesRepository.findAllByIdUser(film.getIdUser());
         List<String> respond = new ArrayList<>();
         boolean exists = false;
+        FavoriteMovies deletingfilm = new FavoriteMovies();
         for (FavoriteMovies movie : listFavMovies) {
-            if (movie.getIdTmdb() == users.getIdTmdb()) {
+            if (movie.getIdTmdb() == film.getIdTmdb()) {
                 exists = true;
+                deletingfilm = movie;
                 break;
             }
         }
         if (listFavMovies == null || !exists) {
-            favoriteMoviesRepository.save(users);
+            favoriteMoviesRepository.save(film);
             respond.add("Success");
-        } else {
-            respond.add("failed");
+        } else{
+            favoriteMoviesRepository.delete(deletingfilm);
+            respond.add("Removed");
         }
-        long userid = users.getIdTmdb();
+        long userid = film.getIdTmdb();
         respond.add(String.valueOf(userid));
         return respond;
     }
+
     @GetMapping("/getFilms/{userId}")
     public List<String> getAll(@PathVariable("userId") int id) {
 
@@ -44,15 +48,14 @@ public class ControllerFav {
         List<String> respond = new ArrayList<>();
 
         if (listFavMovies != null && !listFavMovies.isEmpty()) {
-            respond.add("Success");
-            for (FavoriteMovies movie : listFavMovies) {
+                for (FavoriteMovies movie : listFavMovies) {
                 respond.add(String.valueOf(movie.getIdTmdb()));
             }
         } else {
             respond.add("failed");
         }
 
-        return respond;     
+        return respond;
     }
 
 }
