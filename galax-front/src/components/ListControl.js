@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import List from "./List.js";
 import ListController from './ListController.js';
 
-export default function CenteredList({movie, link, name}) {
-   
+export default function CenteredList({movie, link, name, listFav}) {
+
     const [movies, setMovies] = useState([]);
     const [startIndex, setStartIndex] = useState(0);
-         
+    const list = listFav;
+    console.log(list)
+
     useEffect(() => {
         const API_URL = link; 
         const fetchMovies = async () => {
@@ -16,12 +18,11 @@ export default function CenteredList({movie, link, name}) {
         };
         fetchMovies();
     }, [movie, link]); 
-    
     return (
         <div className="container my-24 place-content-center mx-auto "> {/* Centering the carousel */}
             <div id="List" className="mx-auto"> 
             <ListController startIndex={startIndex} setStartIndex={setStartIndex} movies={movies} name={name}/>
-            <List movies={movies} startIndex={startIndex} movie={movie} listFav=""/>
+            <List movies={movies} startIndex={startIndex} movie={movie} listFav={listFav}/>
             </div>
         </div>
     );

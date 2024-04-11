@@ -1,8 +1,7 @@
 package com.backend.backend;
 
 import com.backend.backend.model.FavoriteMovies;
-import com.backend.backend.model.Users;
-import com.backend.backend.repository.FavoriteMoviesRepository;
+    import com.backend.backend.repository.FavoriteMoviesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

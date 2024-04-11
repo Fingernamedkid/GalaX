@@ -49,9 +49,11 @@ function Films() {
         />
         :listgenre.slice(0, 5).map((genre) => (
           <CenteredList
+          listFav={listFav}
             movie={movie}
             link={`https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=true&language=en-US&page=1&sort_by=popularity.desc&with_genres=${genre.id}&api_key=8b64af438dcdf72c27a5df692c7ebf1b`}
             name={genre.name}
+            
           />
         ))}
       </section>
