@@ -111,37 +111,36 @@ export default function Film() {
                         <div className="flex items-start space-x-8 my-2 px-2">
                         <img src={`https://image.tmdb.org/t/p/w500${movieTitle.poster_path}`} alt="#" style={{ maxWidth: '500px' }} className='px-3' />
                         <div className='flex flex-col px-2 py-2'>
-                            {movieTitle && <h2 className="text-3xl mt-2 font-bold border-l-4 border-meteor-orange pl-2 ">{movieTitle.title}</h2>}
-                            {movieTitle && <h2 className="text-lg mt-4 text-starlight-white">Tagline: {movieTitle.tagline}</h2>}
-                            {movieTitle && <h2 className="text-lg mt-2 text-starlight-white">Status: {movieTitle.status}</h2>}
-                            {movieTitle && <h2 className="text-lg mt-2 text-starlight-white">Release date: {movieTitle.release_date}</h2>}
-                            {movieTitle && <h2 className="text-lg mt-2 text-starlight-white">Genres: {movieTitle.genres[0].name}, {movieTitle.genres[1].name}</h2>}
-                            {movieTitle && <h2 className="text-lg mt-2 text-starlight-white">Budget: {movieTitle.budget}</h2>}
-                            {movieTitle && <h2 className="text-lg mt-2 text-starlight-white">Popularity: {movieTitle.popularity}</h2>}
+                            {movieTitle && <h2 className="text-3xl mt-2 font-bold border-l-4 pl-2 ">{movieTitle.title}</h2>}
+                            {movieTitle && <h2 className="text-lg mt-4 ">Tagline: {movieTitle.tagline}</h2>}
+                            {movieTitle && <h2 className="text-lg mt-2 ">Status: {movieTitle.status}</h2>}
+                            {movieTitle && <h2 className="text-lg mt-2 ">Release date: {movieTitle.release_date}</h2>}
+                            {movieTitle && <h2 className="text-lg mt-2 ">Genres: {movieTitle.genres[0].name}, {movieTitle.genres[1].name}</h2>}
+                            {movieTitle && <h2 className="text-lg mt-2 ">Budget: {movieTitle.budget}</h2>}
+                            {movieTitle && <h2 className="text-lg mt-2 ">Popularity: {movieTitle.popularity}</h2>}
                         </div>
 
                     </div>
-                    {/* Flag TODO */}
-                    <div className="my-12 border-t-4 border-meteor-orange">
-                        <div className='text-2xl font-bold my-4 px-2 text-starlight-white'>
+                    <div className="my-12 border-t-4">
+                        <div className='text-2xl font-bold my-4 px-2 '>
                             Overview:
                         </div>
                         <div className=''>
-                            {movieTitle && <h2 className="text-lg text-starlight-white">{movieTitle.overview}</h2>}
+                            {movieTitle && <h2 className="text-lg ">{movieTitle.overview}</h2>}
                         </div>
-                        <div className='text-2xl font-bold my-4 px-2 text-starlight-white'>
+                        <div className='text-2xl font-bold my-4 px-2 '>
                             Production Companies:
                         </div>
                         <div className="flex flex-wrap justify-start">
                             {movieTitle && movieTitle.production_companies.map(company => (
-                                <div className="bg-celestial-gold w-64  bg-blend-color border border-starlight-white h-24 shadow-md p-3 m-3 flex items-center">
+                                <div className=" w-64  bg-blend-color border h-24 shadow-md p-3 m-3 flex items-center">
                                     <div className='w-28 flex justify-center px-2'>
 
                                     <img src={company.logo_path ? `https://image.tmdb.org/t/p/w500${company.logo_path}` : gif(Gifls)} 
                                     alt="Company Logo" className=" max-w-auto h-16 mr-2" />
                                     </div>
                                     <div>
-                                        <h3 className="text-lg font-bold overflow-hidden text-starlight-white">{company.name}</h3>
+                                        <h3 className="text-lg font-bold overflow-hidden ">{company.name}</h3>
                                     </div>
                                 </div>
                             ))}
@@ -150,7 +149,7 @@ export default function Film() {
                     
                     
                     <div className="my-12 border-t-4 border-meteor-orange">
-                    <div className='text-2xl font-bold my-4 px-2 text-starlight-white'>
+                    <div className='text-2xl font-bold my-4 px-2 '>
                             Cast:
                         </div>
 
@@ -168,8 +167,8 @@ export default function Film() {
                         </div>
                     
                         {/* Actor List Content */}
-                    <div className="my-12 border-t-4 border-meteor-orange">
-                    <div className='text-2xl font-bold my-4 px-2 text-starlight-white'>
+                    <div className="my-12 border-t-4 ">
+                    <div className='text-2xl font-bold my-4 px-2 '>
                             Review:
                         </div>
                         <div className="flex flex-wrap justify-start">
@@ -178,18 +177,18 @@ export default function Film() {
                                 <div className="h-full bg-gray-800 bg-opacity-70 flex flex-col  pt-4 pl-4 pb-4 pr-4">
                                     <h3 className="text-lg font-semibold text-white flex">
                                     {review.author_details.avatar_path ? (
-    <img
-        src={`https://image.tmdb.org/t/p/w500${review.author_details.avatar_path}`}
-        alt={review.author_details.name}
-        className="w-20 h-20 object-cover rounded-full flex-col"
-    />
-) : (
-    <img
-        src={gif(Gifls)}
-        alt={review.author_details.name}
-        className="w-20 h-20 object-cover rounded-full flex-col"
-    />
-)}
+                                                    <img
+                                                        src={`https://image.tmdb.org/t/p/w500${review.author_details.avatar_path}`}
+                                                        alt={review.author_details.name}
+                                                        className="w-20 h-20 object-cover rounded-full flex-col"
+                                                    />
+                                                ) : (
+                                                    <img
+                                                        src={gif(Gifls)}
+                                                        alt={review.author_details.name}
+                                                        className="w-20 h-20 object-cover rounded-full flex-col"
+                                                    />
+                                                )}
 
                                             <div className='flex-col  ml-3'>
                                             <div className=' text-3xl'>

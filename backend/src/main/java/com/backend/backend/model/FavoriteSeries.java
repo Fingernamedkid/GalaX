@@ -18,10 +18,7 @@ public class FavoriteSeries {
     @Column(name = "id_user", nullable = false)
     private int idUser;
 
-
-
     @Column(name = "idTmdb", nullable = false)
-
     private long idTmdb;
 
 

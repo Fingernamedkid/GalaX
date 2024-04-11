@@ -16,6 +16,7 @@ import static com.backend.backend.Stmp.sendEmailVerificationEmail;
 @RestController
 @CrossOrigin("http://localhost:4568")
 public class Controller {
+    //TODO Try Catch methods
     @Autowired
     UsersRepository usersRepository;
     @Autowired
@@ -23,22 +24,30 @@ public class Controller {
     // te preparer les requette si tu as 12 repo tu inject 12 autoriwere.
     @PostMapping("/createU")
     public List<String> users1(@RequestBody Users users) {
-        System.out.println(users.toString());
-        Users existed = usersRepository.findUsersByEmail(users.getEmail());
-        List<String> respond = new ArrayList<>();
-        if (existed == null) {
-            usersRepository.save(users);
-            respond.add("Success");
-        } else {
-            respond.add("failed");
+        try{
+            System.out.println(users.toString());
+            Users existed = usersRepository.findUsersByEmail(users.getEmail());
+            List<String> respond = new ArrayList<>();
+            if (existed == null) {
+                usersRepository.save(users);
+                respond.add("Success");
+            } else {
+                respond.add("failed");
+            }
+            int userid = users.getIdusers();
+            respond.add(String.valueOf(userid));
+            return respond;
+        }catch (Exception e){
+            List<String> respond = new ArrayList<>();
+            respond.add(e.toString());
+            return respond;
+
         }
-        int userid = users.getIdusers();
-        respond.add(String.valueOf(userid));
-        return respond;
     }
 
     @GetMapping("/verifyU/{id}")
     public List<String> verifyU(@PathVariable("id") int userId) {
+        try{
         System.out.println(userId);
         Users user = usersRepository.findUsersByIdusers(userId);
         List<String> respond = new ArrayList<>();
@@ -48,14 +57,19 @@ public class Controller {
         respond.add("Success");
         respond.add(String.valueOf(userId));
         return respond;
+        }catch (Exception e){
+            List<String> respond = new ArrayList<>();
+            respond.add(e.toString());
+            return respond;
+
+        }
     }
     @PostMapping("/loginU")
     public List<String> login(@RequestBody Users users) {
+        try{
         Users existed = usersRepository.findUsersByEmail(users.getEmail());
         System.out.printf(users.toString());
         List<String> respond = new ArrayList<>();
-
-
         if ((existed != null) && existed.getEmail().equals(users.getEmail())) {
             if (existed.getPassword().equals(users.getPassword())) {
                 respond.add("Success");
@@ -70,20 +84,41 @@ public class Controller {
             }
         }
 
+
         System.out.println(respond);
         return respond;
+    }catch (Exception e){
+        List<String> respond = new ArrayList<>();
+        respond.add(e.toString());
+        return respond;
+
+    }
+
     }
     @GetMapping("/home/getIdU/{email}")
     public List<String> getEmailbyName(@PathVariable("email") int users) {
+        try{
         Users finding = usersRepository.findUsersByIdusers(users);
         List<String> respond = new ArrayList<>();
         respond.add(finding.getFirst_name());
         respond.add(String.valueOf(finding.getIdusers()));
         return respond;
+    }catch (Exception e){
+        List<String> respond = new ArrayList<>();
+        respond.add(e.toString());
+        return respond;
+
+    }
     }
     @GetMapping("/home/getnameU/{id}")
     public String getNamebyEmail(@PathVariable("id") int id) {
-        return usersRepository.findUsersByIdusers(id).getFirst_name();
+        try{
+            String respond =usersRepository.findUsersByIdusers(id).getFirst_name();
+            return respond;
+        }catch (Exception e){
+            return e.toString();
+        }
+
     }
 
 

@@ -19,8 +19,8 @@ public class ControllerFav {
     FavoriteSeriesRepository favoriteSeriesRepository;
     @PostMapping("/saveFilm")
     public List<String> users1(@RequestBody FavoriteMovies film) {
+        try{
         System.out.println(film.toString());
-
         List<FavoriteMovies> listFavMovies =  favoriteMoviesRepository.findAllByIdUser(film.getIdUser());
         List<String> respond = new ArrayList<>();
         boolean exists = false;
@@ -42,11 +42,17 @@ public class ControllerFav {
         long userid = film.getIdTmdb();
         respond.add(String.valueOf(userid));
         return respond;
+    }catch (Exception e){
+        List<String> respond = new ArrayList<>();
+        respond.add(e.toString());
+        return respond;
+
+    }
     }
 
     @GetMapping("/getFilms/{userId}")
     public List<String> getAll(@PathVariable("userId") int id) {
-
+        try{
         List<FavoriteMovies> listFavMovies = favoriteMoviesRepository.findAllByIdUser(id);
         List<String> respond = new ArrayList<>();
 
@@ -59,11 +65,17 @@ public class ControllerFav {
         }
 
         return respond;
+        }catch (Exception e){
+            List<String> respond = new ArrayList<>();
+            respond.add(e.toString());
+            return respond;
+
+        }
     }
     @PostMapping("/saveSeries")
     public List<String> series(@RequestBody FavoriteSeries series) {
+        try{
         System.out.println(series.toString());
-
         List<FavoriteSeries> listFavSeries =  favoriteSeriesRepository.findAllByIdUser(series.getIdUser());
         List<String> respond = new ArrayList<>();
         boolean exists = false;
@@ -84,11 +96,18 @@ public class ControllerFav {
         }
         long userid = series.getIdTmdb();
         respond.add(String.valueOf(userid));
+
         return respond;
+        }catch (Exception e){
+            List<String> respond = new ArrayList<>();
+            respond.add(e.toString());
+            return respond;
+
+        }
     }
     @GetMapping("/getSeries/{userId}")
     public List<String> getAllSeries(@PathVariable("userId") int id) {
-
+        try{
         List<FavoriteSeries> listFavSeries = favoriteSeriesRepository.findAllByIdUser(id);
         List<String> respond = new ArrayList<>();
 
@@ -101,6 +120,46 @@ public class ControllerFav {
         }
 
         return respond;
+    }catch (Exception e){
+        List<String> respond = new ArrayList<>();
+        respond.add(e.toString());
+        return respond;
+
+    }
+    }
+    @GetMapping("/getSeries/{userId}")
+    public List<List<String>> getAllFav(@PathVariable("userId") int id) {
+        try{
+            List<FavoriteSeries> listFavSeries = favoriteSeriesRepository.findAllByIdUser(id);
+            List<FavoriteMovies> listFavMovies = favoriteMoviesRepository.findAllByIdUser(id);
+            List<String> respond = new ArrayList<>();
+            List<String> respond2 = new ArrayList<>();
+            List<List<String>> respondFinal = new ArrayList<>();
+
+            if (listFavMovies != null &&listFavSeries != null && !listFavSeries.isEmpty()) {
+                for (FavoriteSeries series : listFavSeries) {
+                    respond.add(String.valueOf(series.getIdTmdb()));
+                }
+                for (FavoriteMovies series : listFavMovies) {
+                    respond2.add(String.valueOf(series.getIdTmdb()));
+                }
+                respondFinal.add(respond);
+                respondFinal.add(respond2);
+            } else {
+                List<String> respondFailed = new ArrayList<>();
+                respondFailed.add("failed");
+                respondFinal.add(respondFailed);
+            }
+
+            return respondFinal;
+        }catch (Exception e){
+            List<List<String>> respondFinal = new ArrayList<>();
+            List<String> respondFailed = new ArrayList<>();
+            respondFailed.add("failed");
+            respondFinal.add(respondFailed);
+            return respondFinal;
+
+        }
     }
 
 }

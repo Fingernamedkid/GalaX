@@ -68,7 +68,7 @@ export default function Cards({ film , movie, listFavorite }) {
                     <h3 className="font-bold text-white-800 text-xl mb-2 h-12 truncate">
                         {film.title}
                     </h3>
-                    <div className="text-lg text-ellipsis">
+                    <div className="text-lg">
                         <p className={getClassByRate(rating).className}>
                             {getClassByRate(rating).emoji}{rating === 0 ? "" : rating}
                         </p>
