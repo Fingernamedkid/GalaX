@@ -10,11 +10,12 @@ email VARCHAR(50) NOT NULL,
 `password` VARCHAR(15) NOT NULL
 );
 
-CREATE TABLE FavoriteMovies(
-idFavoriteMovies int  AUTO_INCREMENT not NULL,
-idusers INT,
-FOREIGN KEY (idusers) REFERENCES Users(idusers),
-PRIMARY KEY(idFavoriteMovies)
+CREATE TABLE favorite_movies(
+id_favorite_movies int  AUTO_INCREMENT not NULL,
+id_tmdb INT,
+id_user INT,
+FOREIGN KEY (id_user) REFERENCES Users(idusers),
+PRIMARY KEY(id_favorite_movies)
 );
 
 CREATE TABLE genre(
@@ -38,10 +39,12 @@ VALUE ("Action"),
  ("Comedy");
 
 
-CREATE TABLE favoriteGenre(
-idfavoriteGenre INT PRIMARY KEY   NOT NULL AUTO_INCREMENT,
-idusers INT,
-FOREIGN KEY (idusers) REFERENCES Users(idusers)
+CREATE TABLE favorite_series(
+id_favorite_series int  AUTO_INCREMENT not NULL,
+id_tmdb INT,
+id_user INT,
+FOREIGN KEY (id_user) REFERENCES Users(idusers),
+PRIMARY KEY(id_favorite_series)
 );
 
 
