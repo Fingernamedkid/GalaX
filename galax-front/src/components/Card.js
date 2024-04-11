@@ -14,7 +14,27 @@ export default function Cards({ film , movie, listFavorite }) {
         setIsFav(listFavorite && listFavorite.includes(String(film.id)));
     }, [film.id, listFavorite]);
 
-    const submitFav = (e) => {
+    const submitFavSeries = (e) => {
+        setIsFav(isFav => !isFav);
+    
+        const value = cookies.get("auth")
+        const fav = {
+            idUser: value,
+            idTmdb: e
+        }
+        axios.post("http://localhost:5050/saveSeries", fav)
+            .then((res ) => {
+                if(res.data[0] === "Success"){
+                    console.log("yes")
+                } else {
+                    console.log(res.data);
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
+    const submitFavFilms = (e) => {
         setIsFav(isFav => !isFav);
     
         const value = cookies.get("auth")
@@ -81,7 +101,7 @@ export default function Cards({ film , movie, listFavorite }) {
                     </Link>
                 </div>
                 <div className="py-2 px-10 pb-2">
-                    <button className="btn btn-info rounded-r-full rounded-l-full w-44" onClick={() => submitFav(film.id)}>
+                    <button className="btn btn-info rounded-r-full rounded-l-full w-44" onClick={movie === "tv"?() => submitFavSeries(film.id):submitFavFilms(film.id)}>
                         <FontAwesomeIcon icon={faPlusCircle} /> {isFav ? "Remove from Watchlist" : "Add to Watchlist"}
                     </button>
                 </div>

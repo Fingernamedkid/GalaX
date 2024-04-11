@@ -127,7 +127,8 @@ public class ControllerFav {
 
     }
     }
-    @GetMapping("/getSeries/{userId}")
+
+    @GetMapping("/getFav/{userId}")
     public List<List<String>> getAllFav(@PathVariable("userId") int id) {
         try{
             List<FavoriteSeries> listFavSeries = favoriteSeriesRepository.findAllByIdUser(id);
@@ -161,5 +162,6 @@ public class ControllerFav {
 
         }
     }
+
 
 }
