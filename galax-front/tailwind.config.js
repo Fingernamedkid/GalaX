@@ -34,6 +34,10 @@ module.exports = {
       colors: {
         
       },
+      
+        lineHeight: {
+          '7.5': '1.87rem', 
+        },
     },
   },
   variants: {

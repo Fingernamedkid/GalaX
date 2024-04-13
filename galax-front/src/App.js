@@ -12,6 +12,7 @@ import MsgValidation from "./components/MsgValidation";
 import Item from "./components/pages/Item";
 import ChoiceGenres from "./components/ChoiceGenres";
 import Tv from "./components/pages/Tv";
+import Favorite from "./components/pages/FavoriteEverything"
 //********************** */
 import OpenHome from "./components/OpenHome";
 import NotFound from "./components/NotFound";
@@ -44,6 +45,7 @@ function App() {
         <Route path="/side" element={<SideMenu />}></Route>
         <Route path="*" element={<SideMenu />}></Route>
         <Route path="/choice/:id" element={<ChoiceGenres/>}/>
+        <Route path='/favorite' element={<Favorite/>} />
         <Route path='/' element={<OpenHome/>} />
         <Route path="/verify/:iduser" element={<VerifyEmail />}/>
         <Route path='/sign' element={<SignIn/>} />

@@ -8,7 +8,6 @@ export default function ListController({startIndex, setStartIndex , movies, name
     const scrollRight = () => {
         setStartIndex(prevIndex => Math.min(prevIndex + 5, movies.length - 1));
     };
-
     return(
     <div>
     <div style={{ borderLeft: '8px solid red'}}>
